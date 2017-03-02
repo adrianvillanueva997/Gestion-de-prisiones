@@ -30,7 +30,7 @@ public class Main implements ActionListener {
         
        		ViewLogin frameLogin = new ViewLogin();
 		Main mc = new Main(frameLogin);
-		frameLogin.addController(mc);
+		//frameLogin.addController(mc);
 		frameLogin.crearVentana();
     }
 
