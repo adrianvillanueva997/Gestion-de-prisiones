@@ -7,8 +7,12 @@ package Vista;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
+import javax.swing.border.LineBorder;
 
 
 /**
@@ -34,6 +38,13 @@ public class ViewLogin extends JFrame {
         frameInicio.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Acaba el programa cuando se cierra la ventana
         frameInicio.setVisible(true);
         frameInicio.getContentPane().setLayout(null); //Obtiene el contenido del JFrame
+        
+        //Crea el campo de texto
+	JTextField txtLoginUser = new JTextField();
+        txtLoginUser.setFont(new Font("Tahoma",Font.PLAIN,21));
+        txtLoginUser.setBorder(new LineBorder(new Color(0,0,0),5,true));
+        txtLoginUser.setBounds(300,300,300,50);
+        frameInicio.getContentPane().add(txtLoginUser);
         
     }
 }
