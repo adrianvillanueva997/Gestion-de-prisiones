@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyectocarceles;
+package Controlador;
 import Vista.ViewLogin;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -27,10 +28,10 @@ public class Main implements ActionListener {
 
     public static void main(String[] args) {
         
-       		ViewLogin mainframe=new ViewLogin();
-		Main mc=new Main(mainframe);
-		//mainframe.addController(mc);
-		mainframe.crearVentana();
+       		ViewLogin frameLogin = new ViewLogin();
+		Main mc = new Main(frameLogin);
+		frameLogin.addController(mc);
+		frameLogin.crearVentana();
     }
 
 
