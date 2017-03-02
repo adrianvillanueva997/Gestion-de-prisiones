@@ -3,20 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controlador;
+package Modelo;
 
 /**
  *
  * @author Adrián Villanueva Martínez
  */
-public class JefeDeSeguridad extends Seguridad {
-
+public class Guardia extends Seguridad{
+    
     private Bloque bloque;
     
-    public JefeDeSeguridad(String nombre, int ID,Bloque bloque) {
+    /**
+     *
+     * @param nombre
+     * @param ID
+     * @param bloque
+     */
+    public Guardia(String nombre, int ID, Bloque bloque) {
         super(nombre, ID);
         this.bloque = bloque;
     }
+    
     /**
      *
      * @return

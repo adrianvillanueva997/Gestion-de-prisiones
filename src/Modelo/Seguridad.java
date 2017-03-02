@@ -3,15 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controlador;
+package Modelo;
 
 /**
  *
  * @author Adrián Villanueva Martínez
  */
-public class Mantenimiento extends Empleado {
+public class Seguridad extends Empleado {
     
-    public Mantenimiento(String nombre, int ID) {
+    /**
+     *
+     * @param nombre
+     * @param ID
+     */
+    public Seguridad(String nombre, int ID) {
         super(nombre, ID);
     }
     

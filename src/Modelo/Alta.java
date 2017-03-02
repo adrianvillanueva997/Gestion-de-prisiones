@@ -3,21 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controlador;
+package Modelo;
+
+import java.util.Vector;
 
 /**
  *
  * @author Adrián Villanueva Martínez
  */
-public class Seguridad extends Empleado {
+public class Alta extends Bloque{
     
     /**
      *
-     * @param nombre
-     * @param ID
+     * @param listaPrisioneros
+     * @param listaCeldas
      */
-    public Seguridad(String nombre, int ID) {
-        super(nombre, ID);
+    public Alta(Vector<Prisionero> listaPrisioneros, Vector<Celda> listaCeldas) {
+        super(listaPrisioneros, listaCeldas);
     }
     
 }

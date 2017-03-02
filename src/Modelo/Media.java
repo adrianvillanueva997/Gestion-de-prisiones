@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controlador;
+package Modelo;
 
 import java.util.Vector;
 
@@ -11,14 +11,14 @@ import java.util.Vector;
  *
  * @author Adrián Villanueva Martínez
  */
-public class Alta extends Bloque{
+public class Media extends Bloque {
     
     /**
      *
      * @param listaPrisioneros
      * @param listaCeldas
      */
-    public Alta(Vector<Prisionero> listaPrisioneros, Vector<Celda> listaCeldas) {
+    public Media(Vector<Prisionero> listaPrisioneros, Vector<Celda> listaCeldas) {
         super(listaPrisioneros, listaCeldas);
     }
     
