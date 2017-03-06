@@ -9,14 +9,10 @@ import Controlador.Main;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.Toolkit;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import javax.swing.JTextPane;
 import javax.swing.border.LineBorder;
 
 
@@ -46,26 +42,12 @@ public class ViewLogin extends JFrame {
         frameInicio.setTitle("Gestión de Cárcel"); //Establece el fondo del programa en blanco
         frameInicio.setResizable(false); // Impide que la ventana se pueda redimensionar
         frameInicio.setMinimumSize(new Dimension(200, 200));
-        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-        int ancho = (int) screen.getWidth(); //convierte getwitdth de double a int
-        int alto = (int) screen.getHeight(); // idem
-        frameInicio.setBounds(0, 0,ancho ,alto); // Establece el ancho y alto de la pantalla
+        frameInicio.setBounds(0,0,800,600); // Establece el ancho y alto de la pantalla
         frameInicio.setExtendedState(JFrame.MAXIMIZED_BOTH); //Maximiza la pantalla
         frameInicio.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Acaba el programa cuando se cierra la ventana
-        
-        frameInicio.setMinimumSize(new Dimension(200, 200));
         frameInicio.getContentPane().setLayout(null); //Obtiene el contenido del JFrame
         
-        frameInicio.addComponentListener(new ComponentAdapter() {public void componentResized(ComponentEvent evt) {
-        Dimension size = frameInicio.getSize();
-        Dimension min = frameInicio.getMinimumSize();
-        if (size.getWidth() < min.getWidth()) {
-          frameInicio.setSize((int) min.getWidth(), (int) size.getHeight());
-        }
-        if (size.getHeight() < min.getHeight()) {
-          frameInicio.setSize((int) size.getWidth(), (int) min.getHeight());
-        }
-      }});
+
         
         
         
