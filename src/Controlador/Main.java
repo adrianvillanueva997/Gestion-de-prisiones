@@ -42,11 +42,11 @@ public class Main implements ActionListener {
 					//Abre ventana según el tercer parámetro del txt
 					switch(resultado[1]){
 						case "alguacil":
-							//Abre ventana Médico
+							//Abre ventana Alguacil
 							abrirVentanaAlguacil(usuario);
 							break;
 						case "jefeseguridad":
-							//Abre ventana Paciente
+							//Abre ventana Jefe Seguridad
 							abrirVentanaJefeSeguridad(usuario);
 							break;
 						default:

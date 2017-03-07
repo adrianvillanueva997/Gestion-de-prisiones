@@ -5,8 +5,8 @@
  */
 package Vista;
 
-import Controlador.ControladorAbout;
-import Controlador.Main;
+//import Controlador.ControladorAbout;
+import Controlador.*;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -29,10 +29,9 @@ public class ViewLogin extends JFrame {
     public JButton btnAceptar;
     public JButton btnAbout;
     Main controlador;
-    ControladorAbout ca;
     
     public void addController(Main mc) {
-        mc = controlador;
+        controlador = mc;
     }
     public void crearVentanaLogin(){
         this.getContentPane().setBackground(Color.WHITE); //Establece el fondo en blanco

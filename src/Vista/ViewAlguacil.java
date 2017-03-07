@@ -19,7 +19,7 @@ public class ViewAlguacil extends JFrame {
     public JFrame frmAlguacil;
     
     public void addController(ControladorAlguacil mc) {
-        mc = controlador;
+      controlador = mc;
     }
     //Constructor por defecto
     public ViewAlguacil(){

@@ -26,11 +26,7 @@ public class ViewAbout extends JFrame {
 	public JButton btnAboutAceptar;
     
     public void addController(ControladorAbout mc) {
-        mc = controlador;
-    }
-    //Constructor por defecto
-    public ViewAbout(){
-        super();
+        controlador = mc;
     }
     public void crearVentana(){
 		//Crea la ventana

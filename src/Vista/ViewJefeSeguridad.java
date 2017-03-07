@@ -20,7 +20,7 @@ public class ViewJefeSeguridad {
     public JFrame frmJefeSeguridad;
     
     public void addController(ControladorJefeSeguridad mc) {
-        mc = controlador;
+        controlador = mc;
     }
     //Constructor por defecto
     public ViewJefeSeguridad(){
