@@ -21,8 +21,8 @@ import javax.swing.JLabel;
  */
 public class ViewAbout extends JFrame {
 	ControladorAbout controlador;
-	public JLabel lbl_About_Logo;
-	public JLabel lbl_About;
+	public JLabel labelAboutLogo;
+	public JLabel labelAbout;
 	public JButton btnAboutAceptar;
     
     public void addController(ControladorAbout mc) {
@@ -36,31 +36,33 @@ public class ViewAbout extends JFrame {
 		this.setBounds(100, 100, 450, 550);	//Se establece el tamaño
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);	//Se establece su funcion por defecto al cerrar con la "X"
 		this.getContentPane().setLayout(null);	//Obtiene el del contenido del JFrame y no establece ningún tipo de Diseño(Layout)
-                //Crea la etiqueta
-                JLabel lbl_About = new JLabel("<html>Programa realizado por:<br>Adrián Villanueva Martínez"
-                        + "<br>Miguel Chacón Carrasco<br>Germán García García"
-                        + "<br>Zhang Hon Chen</html>");
-		//Se introduce el texto que va a salir por pantalla
-		lbl_About.setBounds(22, 195, 381, 224);	//Se establece el tamaño
-		lbl_About.setFont(new Font("Tahoma", Font.PLAIN, 20));	//Establece el tamaño y tipo de letra
-		this.getContentPane().add(lbl_About);	//Se añade el elemento al JFrame
-                //Crea la etiqueta para la imagen
-                lbl_About_Logo = new JLabel("");
-		Image logo = new ImageIcon(this.getClass().getResource("/apus_logo.jpg")).getImage();	//Crea el objeto imagen y lo vincula a la imagen apus_logo.jpg guardada en la carpeta img del proyecto
-		lbl_About_Logo.setIcon(new ImageIcon(logo));	//Coloca la imagen en la etiqueta
-		lbl_About_Logo.setBounds(132, 13, 183, 152);	//Establece el tamaño de la ventana
-		this.getContentPane().add(lbl_About_Logo);	//Se añade el elemento al JFrame
+
 		
                 //Crea el botón
-                btnAboutAceptar = new JButton("About");	//Indica qué está escrito
+                btnAboutAceptar = new JButton("Aceptar");	//Indica qué está escrito
                 btnAboutAceptar.setForeground(Color.WHITE);	//Establece el color de la fuente
                 btnAboutAceptar.setFont(new Font("Tahoma", Font.BOLD, 20));	//Establece el tamaño y el tipo de letra que tendrá el botón
                 btnAboutAceptar.setBackground(new Color(0, 0, 0));	//Establece el color del botón
-                btnAboutAceptar.setBounds(10, 515, 125, 38);	//Establece el tamaño del botón
+                btnAboutAceptar.setBounds(150, 400, 125, 38);	//Establece el tamaño del botón
                 this.getContentPane().add(btnAboutAceptar);	//Se añade el elemento al JFrame
                 btnAboutAceptar.addActionListener(controlador);	//Añade el botón al ActionListener para después asignarle su función
-		
-		this.setVisible(true);	//Se hace visible la ventana
-    }
+		//Crea la etiqueta
+		labelAbout = new JLabel("<html>Programa realizado por:<br>Adrián Villanueva Martínez<br>Germán García García<br>Miguel Chacón Carrasco</html>");
+		//Se introduce el texto que va a salir por pantalla
+		labelAbout.setBounds(50, 50, 381, 224);	//Se establece el tamaño
+		labelAbout.setFont(new Font("Tahoma", Font.PLAIN, 20));	//Establece el tamaño y tipo de letra
+		this.getContentPane().add(labelAbout);	//Se añade el elemento al JFrame
+                //Crea la etiqueta para la imagen
+		labelAboutLogo = new JLabel("");
+		//Image logo = new ImageIcon(this.getClass().getResource("/logo_carcel.png")).getImage();	//Crea el objeto imagen y lo vincula a la imagen apus_logo.jpg guardada en la carpeta img del proyecto
+		//labelAboutLogo.setIcon(new ImageIcon(logo));	//Coloca la imagen en la etiqueta
+		labelAboutLogo.setBounds(132, 13, 183, 152);	//Establece el tamaño de la ventana
+		this.getContentPane().add(labelAboutLogo);	//Se añade el elemento al JFrame
+
+                this.setVisible(true);
+    }           
+    
+    
+                
     
 }

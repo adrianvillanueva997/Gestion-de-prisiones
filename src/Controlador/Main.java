@@ -30,7 +30,7 @@ public class Main implements ActionListener {
                 /**
 		 * Acciones que se llevarán a cabo en la ventana.
 		 */
-                        System.out.println("aaaa");
+                System.out.println("aaaa");
 		if(e.getSource().equals(vistaLogin.btnAceptar)){	//analiza la acción que se hace en la ventana y la iguala al btn_Aceptar
 			String usuario = vistaLogin.txtUsuario.getText().toLowerCase();	//recoge el contenido del JTextField
 			char caracteres[] = vistaLogin.txtPass.getPassword();	//array de caracteres que coge los elementos que se encuentran en el JPasswordField
@@ -49,6 +49,9 @@ public class Main implements ActionListener {
 							//Abre ventana Jefe Seguridad
 							abrirVentanaJefeSeguridad(usuario);
 							break;
+                                                case "seguridad":
+                                                        abrirVentanaSeguridad(usuario);
+                                                        break;
 						default:
 							//En el caso de que no sea ninguno de los dos usuarios.
 							Object frame = null;	//crea un objeto ventana
@@ -95,6 +98,16 @@ public class Main implements ActionListener {
 		ControladorAbout ca = new ControladorAbout(va);	//crea nuevo controlador de ventana
 		va.addController(ca);	//asigna el controlador a la ventana creada
 		va.crearVentana();	//crea los elementos de la ventana
+	}
+	public void abrirVentanaSeguridad(String usuario) throws IOException{
+		/**
+		 * Creación de la ventana Médico
+		 */
+		vistaLogin.setVisible(false);	//Cierra la ventana de inicio
+		ViewSeguridad vs = new ViewSeguridad();	//crea nueva ventana
+		ControladorSeguridad cs = new ControladorSeguridad(vs,usuario);	//crea nuevo controlador de ventana
+		vs.addController(cs);	//asigna el controlador a la ventana creada
+		vs.crearVentana(usuario);	//crea los elementos de la ventana
 	}
     public static void main(String[] args) {
         

@@ -23,9 +23,9 @@ public class Fichero {
 	BufferedReader lector;//crea un lector de fichero
 	BufferedReader lector1;//crea un lector de fichero
 	File ficheroUsuario = new File("FicheroUsuarios.txt");
-	File ficheroPacientes= new File("FicheroPrisioneros.txt");
-	File ficheroMedico = new File("FicheroMedico.txt");
-	File ficheroMedicoPaciente = new File("FicheroMedicoPaciente.txt");
+	File ficheroPrisioneros= new File("FicheroPrisioneros.txt");
+	File ficheroAlguacil = new File("FicheroAlguacil.txt");
+	File ficheroAlguacilPrisionero = new File("ficheroAlguacilPrisionero.txt");
 	String p = ";";
 
 	
@@ -47,10 +47,8 @@ public class Fichero {
 				}
 			}
 		}
-		
 		return tipo;	//devuelve el array completo
 	}
-	
 	public void guardarUsuario(String historial, String contrasena){
 		try {
 			escritor= new BufferedWriter(new FileWriter(ficheroUsuario,true));  
@@ -63,11 +61,10 @@ public class Fichero {
 			e.printStackTrace();
 		}
 	}
-	
 	public void guardarPaciente(String historial, String Nombre, String Apellidos, String Dni, String Direccion, String CP, String Localidad, String Provincia, 
 			String Telefono, String Email, String Sexo, double Altura, double Peso, double Imc, int diaNacimiento, int mesNacimiento, int anoNacimiento, int diaInicio, int mesInicio, int anoInicio, String Foto){
 		try {
-			escritor= new BufferedWriter(new FileWriter(ficheroPacientes,true)); //el parametro true en FileWtiter hace el que el fichero 
+			escritor= new BufferedWriter(new FileWriter(ficheroAlguacil,true)); //el parametro true en FileWtiter hace el que el fichero 
 			escritor.newLine();
 			escritor.write(historial+p+Nombre+p+Apellidos+p+Dni+p+Direccion+p+CP+p+Localidad+p+Provincia+p+Telefono+p+Email+p+Sexo+p+Altura+p+Peso+p+Imc+p+diaNacimiento+p+mesNacimiento+p+anoNacimiento+p+diaInicio+p+mesInicio+p+anoInicio+p+Foto);
 			escritor.close();
@@ -76,10 +73,9 @@ public class Fichero {
 			e.printStackTrace();
 		}
 	}
-
 	public void guardarMedicoPaciente(String historialPaciente, String historialMedico, String nombre) {
 		try {
-			escritor= new BufferedWriter(new FileWriter(ficheroMedicoPaciente,true));  
+			escritor= new BufferedWriter(new FileWriter(ficheroAlguacilPrisionero,true));  
 			escritor.newLine();
 			escritor.write(historialPaciente+p+historialMedico+p+nombre);
 			escritor.close();
@@ -88,8 +84,6 @@ public class Fichero {
 			e.printStackTrace();
 		}
 	}
-
-	
 	public String nuevoNumHistorial() throws IOException{
 		Scanner scan = new Scanner (new File("ficheroPacientes.txt"));
 		String usuario = null;
@@ -108,11 +102,9 @@ public class Fichero {
 		usuario = Integer.toString(usuarioMax);
 		return usuario;
 	}
-	
-	
 	public String[][] comprobarPacientes(String numHistorialMed) throws IOException{
-		lector=new BufferedReader(new FileReader(ficheroMedicoPaciente));
-		lector1=new BufferedReader(new FileReader(ficheroMedicoPaciente));//establezco fichero de solo lectura
+		lector=new BufferedReader(new FileReader(ficheroAlguacilPrisionero));
+		lector1=new BufferedReader(new FileReader(ficheroAlguacilPrisionero));//establezco fichero de solo lectura
 		String linea;
 		int contador=0;
 		while((linea=lector.readLine())!=null){	//inicia búsqueda del usuario
@@ -134,11 +126,9 @@ public class Fichero {
 		}
 		return tipo;	//devuelve el array completo
 	}
-	
-
 	public String[] comprobarMedico(String historial) throws IOException{
 		Boolean busqueda=false;
-		lector = new BufferedReader(new FileReader(ficheroMedico));	//establezco fichero de solo lectura
+		lector = new BufferedReader(new FileReader(ficheroAlguacil));	//establezco fichero de solo lectura
 		String linea;	
 		String tipo[]=new String[3];	//crea array de Strings de 2 elementos
 		while((linea=lector.readLine())!=null &&(!busqueda)){	//inicia búsqueda del usuario
@@ -150,7 +140,6 @@ public class Fichero {
 			}
 		return tipo;	
 	}
-	
 	public String[][] encontrarPacientes(String numHistorialMed) throws IOException{
 		String[][] listadoFichero = this.comprobarPacientes(numHistorialMed);
 		String[][] listadoPacientes = new String[listadoFichero.length][3];
@@ -175,7 +164,6 @@ public class Fichero {
 		}
 		return listadoPacientes;
 	}
-	
 	public String[][] informacionPaciente (String numHistorialMed, String usuarioPaciente) throws IOException{
 		String[][] listadoFichero = this.comprobarPacientes(numHistorialMed);
 		String[][] infoPaciente = new String[listadoFichero.length][22];
@@ -196,11 +184,10 @@ public class Fichero {
 			}
 		}
 		return infoPaciente;
-	}
-	
+        }
 	public String[] leeDatosPrisionero(String usuario) throws IOException {
 		Boolean busqueda=false;
-		lector = new BufferedReader(new FileReader(ficheroPacientes));	//establezco fichero de solo lectura
+		lector = new BufferedReader(new FileReader(ficheroPrisioneros));	//establezco fichero de solo lectura
 		String linea;	
 		String tipo[]=new String[22];	//crea array de Strings de 2 elementos
 		while((linea=lector.readLine())!=null &&(!busqueda)){	//inicia búsqueda del usuario
@@ -211,11 +198,10 @@ public class Fichero {
 			}
 		}
 		return tipo;
-	}
-		
+	}	
 	public String[] obtenerDatosPaciente(String numHistorial) throws IOException {
 		String[] datos = new String[3];
-		lector = new BufferedReader(new FileReader(ficheroPacientes));
+		lector = new BufferedReader(new FileReader(ficheroPrisioneros));
 		String linea;	
 		Boolean busqueda=false;
 		

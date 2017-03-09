@@ -5,7 +5,7 @@
  */
 package Vista;
 
-import Controlador.ControladorJefeSeguridad;
+import Controlador.ControladorSeguridad;
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JFrame;
@@ -14,24 +14,23 @@ import javax.swing.JFrame;
  *
  * @author adria
  */
-public class ViewJefeSeguridad extends JFrame {
+public class ViewSeguridad extends JFrame {
+        ControladorSeguridad controlador;
     
-    ControladorJefeSeguridad controlador;
-    public JFrame frmJefeSeguridad;
-    
-    public void addController(ControladorJefeSeguridad mc) {
-        controlador = mc;
-    }
+
     //Constructor por defecto
-    public ViewJefeSeguridad(){
-        super();
+    public ViewSeguridad(){
+        
+    }
+    
+    public void addController(ControladorSeguridad mc) {
+        controlador = mc;
     }
     public void crearVentana(String usuario){
         
         //crea la ventana
-
         this.getContentPane().setBackground(Color.WHITE); //Establece el fondo en blanco
-        this.setTitle("Gestión de Cárcel - Jefe de Seguridad"); //Establece el fondo del programa en blanco
+        this.setTitle("Gestión de Cárcel - Empleado de Seguridad"); //Establece el fondo del programa en blanco
         this.setResizable(false); // Impide que la ventana se pueda redimensionar
         this.setMinimumSize(new Dimension(200, 200));
         this.setBounds(0,0,800,600); // Establece el ancho y alto de la pantalla
@@ -41,4 +40,5 @@ public class ViewJefeSeguridad extends JFrame {
         
         this.setVisible(true);
     }
+
 }
