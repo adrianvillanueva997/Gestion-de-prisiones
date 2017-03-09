@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 
 /**
  *
- * @author adria
+ * @author Adrián Villanueva Martínez
  */
 public class ControladorAbout implements ActionListener{
 	

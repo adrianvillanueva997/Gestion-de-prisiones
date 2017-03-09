@@ -9,7 +9,7 @@ import Vista.ViewAlguacil;
 
 /**
  *
- * @author adria
+ * @author Adrián Villanueva Martínez
  */
 public class ControladorAlguacil {
     public String usuario;

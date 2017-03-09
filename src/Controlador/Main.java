@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author adria
+ * @author Adrián Villanueva Martínez
  */
 public class Main implements ActionListener {
     ViewLogin vistaLogin;

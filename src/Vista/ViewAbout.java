@@ -17,7 +17,7 @@ import javax.swing.JLabel;
 
 /**
  *
- * @author adria
+ * @author Adrián Villanueva Martínez
  */
 public class ViewAbout extends JFrame {
 	ControladorAbout controlador;

@@ -12,7 +12,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author adria
+ * @author Adrián Villanueva Martínez
  */
 public class ViewSeguridad extends JFrame {
         ControladorSeguridad controlador;

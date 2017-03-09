@@ -9,7 +9,7 @@ import Vista.ViewSeguridad;
 
 /**
  *
- * @author adria
+ * @author Adrián Villanueva Martínez
  */
 public class ControladorSeguridad {
     public String usuario;
