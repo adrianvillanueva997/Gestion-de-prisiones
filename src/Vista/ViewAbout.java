@@ -61,8 +61,4 @@ public class ViewAbout extends JFrame {
 
                 this.setVisible(true);
     }           
-    
-    
-                
-    
 }
