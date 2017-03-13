@@ -21,10 +21,6 @@ public class ViewAlguacil extends JFrame {
     public JFrame frmAlguacil;
     public JButton btnGEmpleados;
     public JButton btnGReclusos;
-    public JButton btnGAlas;
-    public JButton btnVReclusos;
-    public JButton btnVAlas;
-    public JButton btnVEmpleados;
     public JButton btnDesconectar;
     
     
@@ -61,7 +57,7 @@ public class ViewAlguacil extends JFrame {
         btnDesconectar.setFont(new Font("Tahoma", Font.BOLD, 21)); //Establece el tamaño y el tipo de letra que tendrá el botón
         btnDesconectar.setBackground(new Color(20, 0, 60)); //Establece el color del botón
         btnDesconectar.setForeground(Color.WHITE); //Establece el color de la fuente
-        btnDesconectar.setBounds(10, 512, 200, 60); //Establece el tamaño del botón
+        btnDesconectar.setBounds(10, 500, 200, 60); //Establece el tamaño del botón
         frmAlguacil.getContentPane().add(btnDesconectar); //Se añade el elemento al JFrame
         btnDesconectar.addActionListener(controlador); //Añade el botón al ActionListener para después asignarle su función
         

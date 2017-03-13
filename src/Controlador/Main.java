@@ -30,7 +30,6 @@ public class Main implements ActionListener {
                 /**
 		 * Acciones que se llevarán a cabo en la ventana.
 		 */
-                System.out.println("aaaa");
 		if(e.getSource().equals(vistaLogin.btnAceptar)){	//analiza la acción que se hace en la ventana y la iguala al btn_Aceptar
 			String usuario = vistaLogin.txtUsuario.getText().toLowerCase();	//recoge el contenido del JTextField
 			char caracteres[] = vistaLogin.txtPass.getPassword();	//array de caracteres que coge los elementos que se encuentran en el JPasswordField
