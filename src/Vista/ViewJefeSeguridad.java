@@ -29,7 +29,7 @@ public class ViewJefeSeguridad extends JFrame {
     }
     //Constructor por defecto
     public ViewJefeSeguridad(){
-        super();
+        
     }
     public void crearVentana(String usuario){
         

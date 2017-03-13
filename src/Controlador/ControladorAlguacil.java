@@ -30,7 +30,6 @@ public class ControladorAlguacil implements ActionListener {
      * @param usuario
      */
     public ControladorAlguacil(ViewAlguacil va,String usuario){
-        super();
         this.va = va;
         this.usuario = usuario;
     }

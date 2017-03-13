@@ -29,7 +29,6 @@ public class ViewAlguacil extends JFrame {
     }
     //Constructor por defecto
     public ViewAlguacil(){
-        super();
     }
     
     public void crearVentana(String usuario){

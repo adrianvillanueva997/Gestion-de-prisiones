@@ -27,7 +27,6 @@ public class ControladorJefeSeguridad implements ActionListener {
      * @param usuario
      */
     public ControladorJefeSeguridad(ViewJefeSeguridad vjs,String usuario){
-        super();
         this.vjs = vjs;
         this.usuario = usuario;
     }
