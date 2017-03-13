@@ -8,6 +8,8 @@ package Vista;
 import Controlador.ControladorAlguacil;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 /**
@@ -17,6 +19,13 @@ import javax.swing.JFrame;
 public class ViewAlguacil extends JFrame {
     ControladorAlguacil controlador;
     public JFrame frmAlguacil;
+    public JButton btnGEmpleados;
+    public JButton btnGReclusos;
+    public JButton btnGAlas;
+    public JButton btnVReclusos;
+    public JButton btnVAlas;
+    public JButton btnVEmpleados;
+    
     
     public void addController(ControladorAlguacil mc) {
       controlador = mc;
@@ -38,6 +47,24 @@ public class ViewAlguacil extends JFrame {
         frmAlguacil.setExtendedState(JFrame.MAXIMIZED_BOTH); //Maximiza la pantalla
         frmAlguacil.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Acaba el programa cuando se cierra la ventana
         frmAlguacil.getContentPane().setLayout(null); //Obtiene el contenido del JFrame
+       
+        btnGReclusos= new JButton("Gestión reclusos");	//Indica qué está escrito
+	btnGReclusos.setFont(new Font("Tahoma", Font.BOLD, 21));	//Establece el tamaño y el tipo de letra que tendrá el botón
+	btnGReclusos.setBackground(new Color(20, 0, 60));	//Establece el color del botón
+	btnGReclusos.setForeground(Color.WHITE);	//Establece el color de la fuente
+	btnGReclusos.setBounds(30, 100, 350, 60);	//Establece el tamaño del botón
+	frmAlguacil.getContentPane().add(btnGReclusos);	//Se añade el elemento al JFrame
+	btnGReclusos.addActionListener(controlador);	//Añade el botón al ActionListener para después asignarle su función
+        
+        
+        btnGEmpleados= new JButton("Gestión Empleados");	//Indica qué está escrito
+	btnGEmpleados.setFont(new Font("Tahoma", Font.BOLD, 21));	//Establece el tamaño y el tipo de letra que tendrá el botón
+	btnGEmpleados.setBackground(new Color(20, 0, 60));	//Establece el color del botón
+	btnGEmpleados.setForeground(Color.WHITE);	//Establece el color de la fuente
+	btnGEmpleados.setBounds(30, 200, 350, 60);	//Establece el tamaño del botón
+	frmAlguacil.getContentPane().add(btnGEmpleados);	//Se añade el elemento al JFrame
+	btnGEmpleados.addActionListener(controlador);	//Añade el botón al ActionListener para después asignarle su función
+      
         frmAlguacil.setVisible(true);
     }
     
