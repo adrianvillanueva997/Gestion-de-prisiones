@@ -34,7 +34,7 @@ public class ControladorSeguridad implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-                             if (e.getSource().equals(vjs.btnDesconectar)){
+      if (e.getSource().equals(vjs.btnDesconectar)){
       int respuesta = JOptionPane.showConfirmDialog( frmDialogo, "¿Desea cerrar sesión?", "Cerrar Sesión", JOptionPane.YES_NO_OPTION);
       if(respuesta == JOptionPane.YES_OPTION){
         crearVentanaLogin();
@@ -43,7 +43,6 @@ public class ControladorSeguridad implements ActionListener {
     }
     
         public void crearVentanaLogin () {
-       
         vjs.setVisible(false);   //Cierra la ventana de inicio
         ViewLogin vl = new ViewLogin(); //crea nueva ventana
         Main mc = new Main (vl);    //crea nuevo controlador de ventana

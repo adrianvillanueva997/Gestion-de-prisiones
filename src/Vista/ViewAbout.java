@@ -36,7 +36,7 @@ public class ViewAbout extends JFrame {
 		this.setBounds(100, 100, 450, 550);	//Se establece el tamaño
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);	//Se establece su funcion por defecto al cerrar con la "X"
 		this.getContentPane().setLayout(null);	//Obtiene el del contenido del JFrame y no establece ningún tipo de Diseño(Layout)
-
+                setIcon();
 		
                 //Crea el botón
                 btnAboutAceptar = new JButton("Aceptar");	//Indica qué está escrito
@@ -58,7 +58,6 @@ public class ViewAbout extends JFrame {
 		//labelAboutLogo.setIcon(new ImageIcon(logo));	//Coloca la imagen en la etiqueta
 		labelAboutLogo.setBounds(132, 13, 183, 152);	//Establece el tamaño de la ventana
 		this.getContentPane().add(labelAboutLogo);	//Se añade el elemento al JFrame
-                setIcon();
                 this.setVisible(true);
     }
           private void setIcon() {

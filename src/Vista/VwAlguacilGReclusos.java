@@ -48,15 +48,14 @@ public class VwAlguacilGReclusos extends JFrame {
         this.getContentPane().add(btnAtras); //Se añade el elemento al JFrame
         btnAtras.addActionListener(controlador); //Añade el botón al ActionListener para después asignarle su función
         
-        String titulos[] = { "ID" , "Nombre" , "Apellidos" , "Ala" , "Bloque" , "Celda" , "Delito" };
-        String informacion[][];// obtenemos la informacion del txt
-        informacion = obtieneMariz(ficheroRecluso,7);
- 
-        tablaVReclusos = new JTable(información, titulos);
-        tablaVReclusos.setEnabled(false);
-        tablaVReclusos.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        tablaVReclusos.setViewportView(tablaVReclusos);
-        tablaVReclusos.setBounds(0,0,500,500);
+        //String titulos[] = { "ID" , "Nombre" , "Apellidos" , "Ala" , "Bloque" , "Celda" , "Delito" };
+        //String informacion[][];// obtenemos la informacion del txt
+        //informacion = obtieneMariz(ficheroRecluso,7);
+        //tablaVReclusos = new JTable(información, titulos);
+        //tablaVReclusos.setEnabled(false);
+        //tablaVReclusos.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        //tablaVReclusos.setViewportView(tablaVReclusos);
+        //tablaVReclusos.setBounds(0,0,500,500);
         setIcon();
         this.setVisible(true);
     }

@@ -19,7 +19,8 @@ public class ControladorAlguacil implements ActionListener{
     
     public String usuario;
     ViewAlguacil vas;
-    //CtrlJefe
+    VwAlguacilEmpleados vae;
+    VwAlguacilGReclusos var;
     public JFrame frmDialogo;
 
     /**
@@ -39,14 +40,32 @@ public class ControladorAlguacil implements ActionListener{
       if(respuesta == JOptionPane.YES_OPTION){
         crearVentanaLogin();
       }
+    }else if (e.getSource().equals(vas.btnGEmpleados)){
+        crearVentanaGestionEmpleados();
+    }else if(e.getSource().equals(vas.btnGReclusos)){
+        crearVentanaGestionReclusos();
     }
     }
    
     public void crearVentanaLogin () {
-        vas.setVisible(false);  //Cierra la ventana de inicio
+        vas.frmAlguacil.dispose();  //Cierra la ventana de inicio
         ViewLogin vl = new ViewLogin(); //crea nueva ventana
         Main mc = new Main (vl);    //crea nuevo controlador de ventana
         vl.addController(mc);   //asigna el controlador a la ventana creada
         vl.crearVentanaLogin();
+    }
+    public void crearVentanaGestionEmpleados(){
+        vas.frmAlguacil.dispose();
+        VwAlguacilEmpleados ve = new VwAlguacilEmpleados();
+        CtrlAlguacilEmpleados cae = new CtrlAlguacilEmpleados(ve);
+        ve.addController(cae);
+        ve.crearVentana(usuario);
+    }
+    public void crearVentanaGestionReclusos(){
+        vas.frmAlguacil.dispose();
+        VwAlguacilGReclusos var = new VwAlguacilGReclusos();
+        CtrlAlguacilGestionReclusos car = new CtrlAlguacilGestionReclusos();
+        var.addController(car);
+        var.crearVentana(usuario);
     }
 }

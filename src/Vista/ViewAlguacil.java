@@ -33,6 +33,9 @@ public class ViewAlguacil extends JFrame {
     public ViewAlguacil(){
         
     }
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/logo_carcel.png")));   
+    }
     
     public void crearVentana(String usuario){
         
@@ -46,7 +49,7 @@ public class ViewAlguacil extends JFrame {
         frmAlguacil.setExtendedState(JFrame.MAXIMIZED_BOTH); //Maximiza la pantalla
         frmAlguacil.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Acaba el programa cuando se cierra la ventana
         frmAlguacil.getContentPane().setLayout(null); //Obtiene el contenido del JFrame
-       
+        setIcon();
         btnGReclusos= new JButton("Gestión reclusos");	//Indica qué está escrito
 	btnGReclusos.setFont(new Font("Tahoma", Font.BOLD, 21));	//Establece el tamaño y el tipo de letra que tendrá el botón
 	btnGReclusos.setBackground(new Color(20, 0, 60));	//Establece el color del botón
@@ -70,11 +73,9 @@ public class ViewAlguacil extends JFrame {
 	btnGEmpleados.setBounds(30, 200, 350, 60);	//Establece el tamaño del botón
 	frmAlguacil.getContentPane().add(btnGEmpleados);	//Se añade el elemento al JFrame
 	btnGEmpleados.addActionListener(controlador);	//Añade el botón al ActionListener para después asignarle su función
-        setIcon();
+        
         frmAlguacil.setVisible(true);
     }
-          private void setIcon() {
-        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/logo_carcel.png")));   
-    }
+
     
 }
