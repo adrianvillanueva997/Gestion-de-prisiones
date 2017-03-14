@@ -10,6 +10,7 @@ import Controlador.CtrlAlguacilEmpleados;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Toolkit;
 import javax.swing.JButton;
 
 /**
@@ -44,8 +45,10 @@ public class VwAlguacilEmpleados extends JFrame {
         btnAtras.setBounds(10, 500, 200, 60); //Establece el tamaño del botón
         this.getContentPane().add(btnAtras); //Se añade el elemento al JFrame
         btnAtras.addActionListener(controlador); //Añade el botón al ActionListener para después asignarle su función
-        
+        setIcon();
         this.setVisible(true);
     }
-    
+          private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/logo_carcel.png")));   
+    }
 }

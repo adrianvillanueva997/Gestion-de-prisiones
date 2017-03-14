@@ -9,6 +9,7 @@ import Controlador.ControladorAlguacil;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Toolkit;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -69,9 +70,11 @@ public class ViewAlguacil extends JFrame {
 	btnGEmpleados.setBounds(30, 200, 350, 60);	//Establece el tamaño del botón
 	frmAlguacil.getContentPane().add(btnGEmpleados);	//Se añade el elemento al JFrame
 	btnGEmpleados.addActionListener(controlador);	//Añade el botón al ActionListener para después asignarle su función
-      
+        setIcon();
         frmAlguacil.setVisible(true);
     }
-    
+          private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/logo_carcel.png")));   
+    }
     
 }

@@ -15,57 +15,38 @@ import javax.swing.JOptionPane;
  *
  * @author Adrián Villanueva Martínez
  */
-public class ControladorAlguacil implements ActionListener {
+public class ControladorAlguacil implements ActionListener{
+    
     public String usuario;
-    public ViewLogin vistaLogin;
-    public VwAlguacilEmpleados vae;
-    public VwAlguacilGReclusos var;
-    public ViewAlguacil va;
-    public ViewLogin vl;
-    public Main mc;
+    ViewAlguacil vas;
+    //CtrlJefe
     public JFrame frmDialogo;
+
     /**
      *
-     * @param va
+     * @param vas
      * @param usuario
      */
-    public ControladorAlguacil(ViewAlguacil va,String usuario){
-        this.va = va;
+    public ControladorAlguacil(ViewAlguacil vas,String usuario){
+        this.vas = vas;
         this.usuario = usuario;
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource().equals(va.btnDesconectar)){
-        int respuesta = JOptionPane.showConfirmDialog( frmDialogo, "¿Desea cerrar sesión?", "Cerrar Sesión", JOptionPane.YES_NO_OPTION);
-        if(respuesta == JOptionPane.YES_OPTION){
+         if (e.getSource().equals(vas.btnDesconectar)){
+      int respuesta = JOptionPane.showConfirmDialog( frmDialogo, "¿Desea cerrar sesión?", "Cerrar Sesión", JOptionPane.YES_NO_OPTION);
+      if(respuesta == JOptionPane.YES_OPTION){
         crearVentanaLogin();
       }
-    }else if(e.getSource().equals(va.btnGEmpleados)){
-        crearVentanaGEmpleados();
-    }else if(e.getSource().equals(va.btnGReclusos)){
-        crearVentanaGReclusos();
     }
     }
-    public void crearVentanaLogin() {
-        va.setVisible(false);   //Cierra la ventana de inicio
+   
+    public void crearVentanaLogin () {
+        vas.setVisible(false);  //Cierra la ventana de inicio
         ViewLogin vl = new ViewLogin(); //crea nueva ventana
         Main mc = new Main (vl);    //crea nuevo controlador de ventana
         vl.addController(mc);   //asigna el controlador a la ventana creada
         vl.crearVentanaLogin();
     }
-    public void crearVentanaGEmpleados(){
-        va.setEnabled(false);
-        VwAlguacilEmpleados vae = new VwAlguacilEmpleados();
-        CtrlAlguacilEmpleados cae = new CtrlAlguacilEmpleados();
-        vae.addController(cae);
-        vae.crearVentana(usuario);
-    }
-    public void crearVentanaGReclusos(){
-        va.setEnabled(false);
-        VwAlguacilGReclusos var = new VwAlguacilGReclusos();
-        CtrlAlguacilGestionReclusos car = new CtrlAlguacilGestionReclusos();
-        var.addController(car);
-        var.crearVentana(usuario);
-    }
-    
 }

@@ -43,7 +43,6 @@ public class ControladorJefeSeguridad implements ActionListener {
     }
    
     public void crearVentanaLogin () {
-       
         vjs.setVisible(false);  //Cierra la ventana de inicio
         ViewLogin vl = new ViewLogin(); //crea nueva ventana
         Main mc = new Main (vl);    //crea nuevo controlador de ventana
@@ -51,7 +50,6 @@ public class ControladorJefeSeguridad implements ActionListener {
         vl.crearVentanaLogin();
     }
     public void crearVentanaVEmpleados () {
-       
         vjs.setVisible(false);  //Cierra la ventana de inicio
         ViewLogin vl = new ViewLogin(); //crea nueva ventana
         Main mc = new Main (vl);    //crea nuevo controlador de ventana

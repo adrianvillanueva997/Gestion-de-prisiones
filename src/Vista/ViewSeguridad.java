@@ -9,6 +9,7 @@ import Controlador.ControladorSeguridad;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Toolkit;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -48,8 +49,11 @@ public class ViewSeguridad extends JFrame {
         btnDesconectar.setBounds(10, 500, 200, 60); //Establece el tamaño del botón
         this.getContentPane().add(btnDesconectar); //Se añade el elemento al JFrame
         btnDesconectar.addActionListener(controlador); //Añade el botón al ActionListener para después asignarle su función
-        
+        setIcon();
         this.setVisible(true);
+    }
+          private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/logo_carcel.png")));   
     }
 
 }

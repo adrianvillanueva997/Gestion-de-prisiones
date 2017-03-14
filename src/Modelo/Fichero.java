@@ -12,6 +12,7 @@ package Modelo;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -216,4 +217,25 @@ public class Fichero {
 		}
 		return datos;
 	}
+        public String[][] obtieneMariz(String nombreFichero, int columnas) throws FileNotFoundException, IOException {
+	int numeroColumnas=columnas;
+	String nombre=nombreFichero;
+	FileReader fr = new FileReader(nombre+".txt");
+	BufferedReader bf = new BufferedReader(fr);
+	int lNumeroLineas = 0;
+            String sCadena;
+	while ((sCadena = bf.readLine())!=null) {
+  		lNumeroLineas++;
+	}
+        
+	Scanner scan = new Scanner (new File(nombre+".txt"));
+        String[] lineatxt = scan.nextLine().split(";");
+	String informacion[][] = new String[lNumeroLineas][numeroColumnas];
+	for (int i=0 ; i<lNumeroLineas ; i++){
+		for(int j=0; j<numeroColumnas ; j++) {
+			informacion[i][j] = lineatxt[j];
+		}
+	}
+	return informacion;
+}
 }

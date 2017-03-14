@@ -9,6 +9,7 @@ import Controlador.ControladorJefeSeguridad;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Toolkit;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -67,6 +68,10 @@ public class ViewJefeSeguridad extends JFrame {
         btnVReclusos.setBounds(30, 100, 350, 60);  
         this.getContentPane().add(btnVReclusos);   
         btnVReclusos.addActionListener(controlador);
+        setIcon();
         this.setVisible(true);
+    }
+          private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/logo_carcel.png")));   
     }
 }

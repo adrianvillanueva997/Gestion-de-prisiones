@@ -10,6 +10,7 @@ import Controlador.*;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
@@ -81,9 +82,12 @@ public class ViewLogin extends JFrame {
 	btnAbout.setBounds(10, 515, 125, 38);//Establece el tamaño del botón
 	this.getContentPane().add(btnAbout);//Se añade el elemento al JFrame
 	btnAbout.addActionListener(controlador);//Añade el botón al ActionListener para después asignarle su función
-
+        setIcon();
 
         this.setVisible(true);
+    }
+      private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/logo_carcel.png")));   
     }
 
 

@@ -58,7 +58,10 @@ public class ViewAbout extends JFrame {
 		//labelAboutLogo.setIcon(new ImageIcon(logo));	//Coloca la imagen en la etiqueta
 		labelAboutLogo.setBounds(132, 13, 183, 152);	//Establece el tamaño de la ventana
 		this.getContentPane().add(labelAboutLogo);	//Se añade el elemento al JFrame
-
+                setIcon();
                 this.setVisible(true);
-    }           
+    }
+          private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/logo_carcel.png")));   
+    }
 }
