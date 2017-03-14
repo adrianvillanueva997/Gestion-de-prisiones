@@ -26,9 +26,11 @@ public class ViewAlguacil extends JFrame {
     
     public void addController(ControladorAlguacil mc) {
       controlador = mc;
+      
     }
     //Constructor por defecto
     public ViewAlguacil(){
+        
     }
     
     public void crearVentana(String usuario){

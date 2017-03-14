@@ -29,7 +29,7 @@ public class VwAlguacilEmpleados extends JFrame {
         
         //crea la ventana
         this.getContentPane().setBackground(Color.WHITE); //Establece el fondo en blanco
-        this.setTitle("Gestión de Cárcel - Empleado de Seguridad"); //Establece el fondo del programa en blanco
+        this.setTitle("Gestión de Cárcel - Gestión de Empleados"); //Establece el fondo del programa en blanco
         this.setResizable(false); // Impide que la ventana se pueda redimensionar
         this.setMinimumSize(new Dimension(200, 200));
         this.setBounds(0,0,800,600); // Establece el ancho y alto de la pantalla

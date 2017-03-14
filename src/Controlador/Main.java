@@ -69,7 +69,7 @@ public class Main implements ActionListener {
     }
 	public void abrirVentanaAlguacil(String usuario) throws IOException{
 		/**
-		 * Creación de la ventana Paciente
+		 * Creación de la Ventana Alguacil
 		 */
 		vistaLogin.setVisible(false);	//Cierra la ventana de inicio
 		ViewAlguacil vp = new ViewAlguacil();	//crea nueva ventana
@@ -80,7 +80,7 @@ public class Main implements ActionListener {
 	
 	public void abrirVentanaJefeSeguridad(String usuario) throws IOException{
 		/**
-		 * Creación de la ventana Médico
+		 * Creación de la ventana del Jefe de Seguridad
 		 */
 		vistaLogin.setVisible(false);	//Cierra la ventana de inicio
 		ViewJefeSeguridad vm = new ViewJefeSeguridad();	//crea nueva ventana
@@ -100,7 +100,7 @@ public class Main implements ActionListener {
 	}
 	public void abrirVentanaSeguridad(String usuario) throws IOException{
 		/**
-		 * Creación de la ventana Médico
+		 * Creación de la Ventana Seguridad
 		 */
 		vistaLogin.setVisible(false);	//Cierra la ventana de inicio
 		ViewSeguridad vs = new ViewSeguridad();	//crea nueva ventana

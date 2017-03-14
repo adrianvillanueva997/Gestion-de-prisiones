@@ -19,6 +19,7 @@ import javax.swing.JOptionPane;
 public class ControladorJefeSeguridad implements ActionListener {
     public String usuario;
     ViewJefeSeguridad vjs;
+    //CtrlJefe
     public JFrame frmDialogo;
 
     /**
@@ -49,5 +50,20 @@ public class ControladorJefeSeguridad implements ActionListener {
         vl.addController(mc);   //asigna el controlador a la ventana creada
         vl.crearVentanaLogin();
     }
-    
+    public void crearVentanaVEmpleados () {
+       
+        vjs.setVisible(false);  //Cierra la ventana de inicio
+        ViewLogin vl = new ViewLogin(); //crea nueva ventana
+        Main mc = new Main (vl);    //crea nuevo controlador de ventana
+        vl.addController(mc);   //asigna el controlador a la ventana creada
+        vl.crearVentanaLogin();
+    }
+    public void crearVentanaVReclusos () {
+       
+        vjs.setVisible(false);  //Cierra la ventana de inicio
+        ViewLogin vl = new ViewLogin(); //crea nueva ventana
+        Main mc = new Main (vl);    //crea nuevo controlador de ventana
+        vl.addController(mc);   //asigna el controlador a la ventana creada
+        vl.crearVentanaLogin();
+    }
 }
