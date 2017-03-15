@@ -49,7 +49,7 @@ public class ControladorJefeSeguridad implements ActionListener {
     }
    
     public void crearVentanaLogin () {
-        vjs.frmJefeSeguridad.dispose();  //Cierra la ventana de inicio
+        vjs.dispose();  //Cierra la ventana de inicio
         ViewLogin vl = new ViewLogin(); //crea nueva ventana
         Main mc = new Main (vl);    //crea nuevo controlador de ventana
         vl.addController(mc);   //asigna el controlador a la ventana creada

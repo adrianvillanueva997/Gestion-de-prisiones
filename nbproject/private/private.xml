@@ -3,23 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/adria/Desktop/programacion/POO/gestion-de-gulags/src/Vista/VwJefeSVisionadoEmpleados.java</file>
-            <file>file:/C:/Users/adria/Desktop/programacion/POO/gestion-de-gulags/src/Controlador/ControladorJefeSeguridad.java</file>
-            <file>file:/C:/Users/adria/Desktop/programacion/POO/gestion-de-gulags/src/Modelo/Alta.java</file>
-            <file>file:/C:/Users/adria/Desktop/programacion/POO/gestion-de-gulags/src/Vista/ViewLogin.java</file>
-            <file>file:/C:/Users/adria/Desktop/programacion/POO/gestion-de-gulags/src/Controlador/ControladorSeguridad.java</file>
-            <file>file:/C:/Users/adria/Desktop/programacion/POO/gestion-de-gulags/src/Vista/VwAlguacilEmpleados.java</file>
-            <file>file:/C:/Users/adria/Desktop/programacion/POO/gestion-de-gulags/src/Controlador/Main.java</file>
-            <file>file:/C:/Users/adria/Desktop/programacion/POO/gestion-de-gulags/src/Modelo/Fichero.java</file>
-            <file>file:/C:/Users/adria/Desktop/programacion/POO/gestion-de-gulags/src/Vista/ViewSeguridad.java</file>
-            <file>file:/C:/Users/adria/Desktop/programacion/POO/gestion-de-gulags/src/Vista/VwJefeSVisionadoReclusos.java</file>
-            <file>file:/C:/Users/adria/Desktop/programacion/POO/gestion-de-gulags/src/Controlador/CtrlAlguacilEmpleados.java</file>
-            <file>file:/C:/Users/adria/Desktop/programacion/POO/gestion-de-gulags/src/Vista/ViewAlguacil.java</file>
-            <file>file:/C:/Users/adria/Desktop/programacion/POO/gestion-de-gulags/src/Controlador/ControladorAbout.java</file>
-            <file>file:/C:/Users/adria/Desktop/programacion/POO/gestion-de-gulags/src/Vista/ViewJefeSeguridad.java</file>
-            <file>file:/C:/Users/adria/Desktop/programacion/POO/gestion-de-gulags/src/Vista/ViewAbout.java</file>
-            <file>file:/C:/Users/adria/Desktop/programacion/POO/gestion-de-gulags/src/Vista/VwAlguacilGReclusos.java</file>
-            <file>file:/C:/Users/adria/Desktop/programacion/POO/gestion-de-gulags/src/Controlador/ControladorAlguacil.java</file>
+            <file>file:/C:/Users/adria/Desktop/universidad/Programación/java/Programacion%20Orientada%20a%20Objetos/Proyectos/gestion-de-gulags/src/Vista/ViewAbout.java</file>
+            <file>file:/C:/Users/adria/Desktop/universidad/Programación/java/Programacion%20Orientada%20a%20Objetos/Proyectos/gestion-de-gulags/src/Controlador/CtrlAlguacilEmpleados.java</file>
+            <file>file:/C:/Users/adria/Desktop/universidad/Programación/java/Programacion%20Orientada%20a%20Objetos/Proyectos/gestion-de-gulags/src/Controlador/ControladorSeguridad.java</file>
+            <file>file:/C:/Users/adria/Desktop/universidad/Programación/java/Programacion%20Orientada%20a%20Objetos/Proyectos/gestion-de-gulags/src/Controlador/CtrlAlguacilGestionReclusos.java</file>
+            <file>file:/C:/Users/adria/Desktop/universidad/Programación/java/Programacion%20Orientada%20a%20Objetos/Proyectos/gestion-de-gulags/src/Controlador/CtrlJefeSVisionadoEmpleados.java</file>
+            <file>file:/C:/Users/adria/Desktop/universidad/Programación/java/Programacion%20Orientada%20a%20Objetos/Proyectos/gestion-de-gulags/src/Controlador/CtrlJefeSVisionadoReclusos.java</file>
         </group>
     </open-files>
 </project-private>

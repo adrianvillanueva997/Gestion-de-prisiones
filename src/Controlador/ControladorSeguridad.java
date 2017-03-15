@@ -38,11 +38,11 @@ public class ControladorSeguridad implements ActionListener {
       int respuesta = JOptionPane.showConfirmDialog( frmDialogo, "¿Desea cerrar sesión?", "Cerrar Sesión", JOptionPane.YES_NO_OPTION);
       if(respuesta == JOptionPane.YES_OPTION){
         crearVentanaLogin();
-      }
+        }
     }
     }
         public void crearVentanaLogin () {
-        vjs.setVisible(false);   //Cierra la ventana de inicio
+        vjs.dispose();   //Cierra la ventana de inicio
         ViewLogin vl = new ViewLogin(); //crea nueva ventana
         Main mc = new Main (vl);    //crea nuevo controlador de ventana
         vl.addController(mc);   //asigna el controlador a la ventana creada
