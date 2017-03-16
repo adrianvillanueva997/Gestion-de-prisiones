@@ -33,6 +33,7 @@ public class ViewAbout extends JFrame {
 		this.setIconImage(Toolkit.getDefaultToolkit().getImage(""));
 		this.getContentPane().setBackground(Color.WHITE);	//Se establece como color de la ventana el blanco
 		this.setTitle("About");	//Titulo de la ventana
+                this.setResizable(false);
 		this.setBounds(100, 100, 450, 550);	//Se establece el tamaño
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);	//Se establece su funcion por defecto al cerrar con la "X"
 		this.getContentPane().setLayout(null);	//Obtiene el del contenido del JFrame y no establece ningún tipo de Diseño(Layout)
@@ -49,14 +50,14 @@ public class ViewAbout extends JFrame {
 		//Crea la etiqueta
 		labelAbout = new JLabel("<html>Programa realizado por:<br>Adrián Villanueva Martínez<br>Germán García García<br>Miguel Chacón Carrasco<br>Zhang Chen<br></html>");
 		//Se introduce el texto que va a salir por pantalla
-		labelAbout.setBounds(50, 50, 381, 224);	//Se establece el tamaño
+		labelAbout.setBounds(150, 175, 200, 200);	//Se establece el tamaño
 		labelAbout.setFont(new Font("Tahoma", Font.PLAIN, 20));	//Establece el tamaño y tipo de letra
 		this.getContentPane().add(labelAbout);	//Se añade el elemento al JFrame
                 //Crea la etiqueta para la imagen
 		labelAboutLogo = new JLabel("");
 		Image logo = new ImageIcon(this.getClass().getResource("/img/logo_empresa.jpg")).getImage();	//Crea el objeto imagen y lo vincula a la imagen apus_logo.jpg guardada en la carpeta img del proyecto
 		labelAboutLogo.setIcon(new ImageIcon(logo));	//Coloca la imagen en la etiqueta
-		labelAboutLogo.setBounds(132, 13, 183, 152);	//Establece el tamaño de la ventana
+		labelAboutLogo.setBounds(125, 0, 200, 200);	//Establece el tamaño de la ventana
 		this.getContentPane().add(labelAboutLogo);	//Se añade el elemento al JFrame
                 this.setVisible(true);
     }

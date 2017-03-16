@@ -62,27 +62,28 @@ public class ViewLogin extends JFrame {
     });
 	txtUsuario.setFont(new Font("Tahoma", Font.PLAIN, 21));	//Establece el tamaño y tipo de letra con el que se escribirá
 	txtUsuario.setBorder(new LineBorder(new Color(0, 0, 0), 5, true));//Establece el tipo de linea y el color
-	txtUsuario.setBounds(170, 180, 455, 53);//Establece el tamaño
+	txtUsuario.setBounds(170, 190, 455, 53);//Establece el tamaño
 	this.getContentPane().add(txtUsuario);//Se añade el elemento al JFrame
 	txtUsuario.setColumns(10);
         //Crea el campo de contraseña
         txtPass.setFont(new Font("Tahoma", Font.PLAIN, 21));	//Establece el tamaño y tipo de letra con el que se escribirá
         txtPass.setBorder(new LineBorder(new Color(0, 0, 0), 5, true));	//Establece el tipo de linea y el color
-        txtPass.setBounds(170, 250, 455, 53);	//Establece el tamaño
+        txtPass.setBounds(170, 260, 455, 53);	//Establece el tamaño
         this.getContentPane().add(txtPass);	//Se añade el elemento al JFrame
         //Crea el botón
 	btnAceptar = new JButton("Aceptar");	//Indica qué está escrito
 	btnAceptar.setFont(new Font("Tahoma", Font.BOLD, 21));	//Establece el tamaño y el tipo de letra que tendrá el botón
 	btnAceptar.setBackground(new Color(0, 0, 0));	//Establece el color del botón
 	btnAceptar.setForeground(Color.WHITE);	//Establece el color de la fuente
-	btnAceptar.setBounds(170, 330, 455, 53);	//Establece el tamaño del botón
+	btnAceptar.setBounds(170, 340, 455, 53);	//Establece el tamaño del botón
 	this.getContentPane().add(btnAceptar);	//Se añade el elemento al JFrame
 	btnAceptar.addActionListener(controlador);	//Añade el botón al ActionListener para después asignarle su función
         //Crea la etiqueta para la imagen
         labelImagenLogin = new JLabel("");
 	Image logo = new ImageIcon(this.getClass().getResource("/img/logo_empresa.jpg")).getImage();	//Crea el objeto imagen y lo vincula a la imagen apus_logo.jpg guardada en la carpeta img del proyecto
 	labelImagenLogin.setIcon(new ImageIcon(logo));	//Coloca la imagen en la etiqueta
-	labelImagenLogin.setBounds(132, 13, 183, 152);	//Establece el tamaño de la ventana
+	labelImagenLogin.setBounds(300, 0, 200, 200);	//Establece el tamaño de la ventana
+        this.getContentPane().add(labelImagenLogin);	//Se añade el elemento al JFrame
         //Crea el botón
 	btnAbout = new JButton("About");//Indica qué está escrito
 	btnAbout.setForeground(Color.WHITE);//Establece el color de la fuente
