@@ -54,8 +54,8 @@ public class ViewAbout extends JFrame {
 		this.getContentPane().add(labelAbout);	//Se añade el elemento al JFrame
                 //Crea la etiqueta para la imagen
 		labelAboutLogo = new JLabel("");
-		//Image logo = new ImageIcon(this.getClass().getResource("/logo_carcel.png")).getImage();	//Crea el objeto imagen y lo vincula a la imagen apus_logo.jpg guardada en la carpeta img del proyecto
-		//labelAboutLogo.setIcon(new ImageIcon(logo));	//Coloca la imagen en la etiqueta
+		Image logo = new ImageIcon(this.getClass().getResource("/img/logo_empresa.jpg")).getImage();	//Crea el objeto imagen y lo vincula a la imagen apus_logo.jpg guardada en la carpeta img del proyecto
+		labelAboutLogo.setIcon(new ImageIcon(logo));	//Coloca la imagen en la etiqueta
 		labelAboutLogo.setBounds(132, 13, 183, 152);	//Establece el tamaño de la ventana
 		this.getContentPane().add(labelAboutLogo);	//Se añade el elemento al JFrame
                 this.setVisible(true);

@@ -10,11 +10,14 @@ import Controlador.*;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
@@ -29,6 +32,7 @@ public class ViewLogin extends JFrame {
     public JPasswordField txtPass;
     public JButton btnAceptar;
     public JButton btnAbout;
+    JLabel labelImagenLogin;
     Main controlador;
     
     public void addController(Main mc) {
@@ -74,6 +78,11 @@ public class ViewLogin extends JFrame {
 	btnAceptar.setBounds(170, 330, 455, 53);	//Establece el tamaño del botón
 	this.getContentPane().add(btnAceptar);	//Se añade el elemento al JFrame
 	btnAceptar.addActionListener(controlador);	//Añade el botón al ActionListener para después asignarle su función
+        //Crea la etiqueta para la imagen
+        labelImagenLogin = new JLabel("");
+	Image logo = new ImageIcon(this.getClass().getResource("/img/logo_empresa.jpg")).getImage();	//Crea el objeto imagen y lo vincula a la imagen apus_logo.jpg guardada en la carpeta img del proyecto
+	labelImagenLogin.setIcon(new ImageIcon(logo));	//Coloca la imagen en la etiqueta
+	labelImagenLogin.setBounds(132, 13, 183, 152);	//Establece el tamaño de la ventana
         //Crea el botón
 	btnAbout = new JButton("About");//Indica qué está escrito
 	btnAbout.setForeground(Color.WHITE);//Establece el color de la fuente
