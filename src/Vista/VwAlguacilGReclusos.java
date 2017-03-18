@@ -15,6 +15,8 @@ import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -28,7 +30,7 @@ public class VwAlguacilGReclusos extends JFrame {
     public Fichero fichero;
     public JTable tablaVReclusos;
     public JButton btnanadir;
-    public CtrlAlguacilGestionReclusos controlador;
+    CtrlAlguacilGestionReclusos controlador;
     public JButton btnAtras;
     public VwAlguacilGReclusos(){
     
@@ -36,7 +38,7 @@ public class VwAlguacilGReclusos extends JFrame {
     public void addController(CtrlAlguacilGestionReclusos mc) {
         controlador = mc;
     }
-        public void crearVentana(String usuario) throws IOException{
+        public void crearVentana(String usuario){
         
         //crea la ventana
         this.getContentPane().setBackground(Color.WHITE); //Establece el fondo en blanco
@@ -63,11 +65,14 @@ public class VwAlguacilGReclusos extends JFrame {
         btnanadir.setBounds(450, 500, 200, 60); //Establece el tamaño del botón
         this.getContentPane().add(btnanadir); //Se añade el elemento al JFrame
         btnanadir.addActionListener(controlador);
-        
         fichero = new Fichero();//Instancio la lectura deñ fichero
         String titulos[] = { "ID" , "Nombre" , "Apellidos" , "Ala" , "Bloque" , "Celda" , "Delito" };//pongo los nombres de los titulos de las columnas, aunque no sale
-        String informacion[][];// obtenemos la informacion del txt
-        informacion= fichero.obtieneMarizrecluso();//lee la informacion del txt y lo guarda en un array bidimensional
+        String informacion[][] = null;// obtenemos la informacion del txt
+        try {
+            informacion= fichero.obtieneMarizrecluso();//lee la informacion del txt y lo guarda en un array bidimensional
+        } catch (IOException ex) {
+            Logger.getLogger(VwAlguacilGReclusos.class.getName()).log(Level.SEVERE, null, ex);
+        }
         //DefaultTableModel dtm= new DefaultTableModel(informacion, titulos);
         tablaVReclusos = new JTable(informacion,titulos);//crea la tabla
         tablaVReclusos.setPreferredScrollableViewportSize(new Dimension(500, 80));
@@ -75,6 +80,7 @@ public class VwAlguacilGReclusos extends JFrame {
         JScrollPane scrollPane = new JScrollPane(tablaVReclusos);//esta linea y las siguientes son mierdas que no sale, no se por que
         this.getContentPane().add(tablaVReclusos);
         this.getContentPane().add(scrollPane, BorderLayout.CENTER);
+        
         addWindowListener(new WindowAdapter() {
 	@Override
         public void windowClosing(WindowEvent e) {
@@ -92,7 +98,7 @@ public class VwAlguacilGReclusos extends JFrame {
         setIcon();
         this.setVisible(true);
     }
-              private void setIcon() {
+        private void setIcon() {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/logo_carcel.png")));   
     }
     

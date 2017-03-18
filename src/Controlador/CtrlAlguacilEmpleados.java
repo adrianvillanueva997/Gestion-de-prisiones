@@ -18,6 +18,7 @@ public class CtrlAlguacilEmpleados implements ActionListener {
     public VwAlguacilEmpleados vage;
     public String usuario;
     public ViewAlguacil va;
+    
     public CtrlAlguacilEmpleados(VwAlguacilEmpleados vage){
         this.vage = vage;
     }

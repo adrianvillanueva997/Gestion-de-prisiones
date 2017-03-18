@@ -16,32 +16,36 @@ import java.awt.event.ActionListener;
  * @author Adrián Villanueva Martínez
  */
 public class CtrlAlguacilGestionReclusos implements ActionListener{
-    public VwAlguacilGReclusos vagr;
+    public VwAlguacilGReclusos vr;
+    public ViewAlguacil va;
+    public VwFormularioRecluso vfr;
     public String usuario;
     
+    public CtrlAlguacilGestionReclusos(VwAlguacilGReclusos vr){
+        this.vr = vr;
+    }
+    
     @Override
-    public void actionPerformed(ActionEvent e){
-         if(e.getSource().equals(vagr.btnAtras)){
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource().equals(vr.btnAtras)){
             volver();
-        }else if(e.getSource().equals(vagr.btnanadir)){
-            crearFormulario();
+        }else if(e.getSource().equals(vr.btnanadir)){
+            formulario();
         }
     }
-    
     public void volver(){
-    vagr.dispose();
-    ViewAlguacil var = new ViewAlguacil();
-    ControladorAlguacil car = new ControladorAlguacil(var,usuario);
-    var.addController(car);
-    var.crearVentana(usuario);
+        vr.dispose();
+        va = new ViewAlguacil();
+        ControladorAlguacil cr = new ControladorAlguacil(va,usuario);
+        va.addController(cr);
+        va.crearVentana(usuario);
     }
     
-    public void crearFormulario(){
-        VwFormularioRecluso vfr = new VwFormularioRecluso();
+    public void formulario(){
+        vfr = new VwFormularioRecluso();
         CtrlFormularioRecluso cfr = new CtrlFormularioRecluso(vfr);
         vfr.addController(cfr);
         vfr.crearVentanaFormularioRecluso(usuario);
-        
         
     }
     

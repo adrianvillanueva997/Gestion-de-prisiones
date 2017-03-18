@@ -72,7 +72,7 @@ public class ControladorAlguacil implements ActionListener{
     public void crearVentanaGestionReclusos() throws IOException{
         vas.frmAlguacil.dispose();
         VwAlguacilGReclusos var = new VwAlguacilGReclusos();
-        CtrlAlguacilGestionReclusos car = new CtrlAlguacilGestionReclusos();
+        CtrlAlguacilGestionReclusos car = new CtrlAlguacilGestionReclusos(var);
         var.addController(car);
         var.crearVentana(usuario);
     }
