@@ -39,7 +39,7 @@ public class VwFormularioRecluso extends JFrame {
     }
     public void crearVentanaFormularioRecluso(String usuario){
         this.getContentPane().setBackground(Color.WHITE); //Establece el fondo en blanco
-        this.setTitle("Gestión de Cárcel"); //Establece el fondo del programa en blanco
+        this.setTitle("Gestión de Cárcel - Añadir recluso"); //Establece el fondo del programa en blanco
         this.setResizable(false); // Impide que la ventana se pueda redimensionar
         this.setMinimumSize(new Dimension(200, 200));
         this.setBounds(0,0,660,500); // Establece el ancho y alto de la pantalla
