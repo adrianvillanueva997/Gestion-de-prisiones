@@ -9,9 +9,12 @@ import Controlador.ControladorAlguacil;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 /**
  *
@@ -23,6 +26,8 @@ public class ViewAlguacil extends JFrame {
     public JButton btnGEmpleados;
     public JButton btnGReclusos;
     public JButton btnDesconectar;
+    public JLabel labelAlguacilImagen;
+    public JLabel labelRecuadroImagen;
     
     
     public void addController(ControladorAlguacil mc) {
@@ -39,7 +44,7 @@ public class ViewAlguacil extends JFrame {
     
     public void crearVentana(String usuario){
         
-        //crea la ventana
+        //CREA LA VENTANA
         frmAlguacil = new JFrame();
         frmAlguacil.getContentPane().setBackground(Color.WHITE); //Establece el fondo en blanco
         frmAlguacil.setTitle("Gestión de Cárcel - Alguacil"); //Establece el fondo del programa en blanco
@@ -49,7 +54,8 @@ public class ViewAlguacil extends JFrame {
         frmAlguacil.setExtendedState(JFrame.MAXIMIZED_BOTH); //Maximiza la pantalla
         frmAlguacil.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Acaba el programa cuando se cierra la ventana
         frmAlguacil.getContentPane().setLayout(null); //Obtiene el contenido del JFrame
-        setIcon();
+        
+        //BOTON GESTION RECLUSOS
         btnGReclusos= new JButton("Gestión reclusos");	//Indica qué está escrito
 	btnGReclusos.setFont(new Font("Tahoma", Font.BOLD, 21));	//Establece el tamaño y el tipo de letra que tendrá el botón
 	btnGReclusos.setBackground(new Color(20, 0, 60));	//Establece el color del botón
@@ -58,6 +64,7 @@ public class ViewAlguacil extends JFrame {
 	frmAlguacil.getContentPane().add(btnGReclusos);	//Se añade el elemento al JFrame
 	btnGReclusos.addActionListener(controlador);	//Añade el botón al ActionListener para después asignarle su función
         
+        //BOTON DESCONECTAR
         btnDesconectar= new JButton("Desconectar"); //Indica qué está escrito
         btnDesconectar.setFont(new Font("Tahoma", Font.BOLD, 21)); //Establece el tamaño y el tipo de letra que tendrá el botón
         btnDesconectar.setBackground(new Color(20, 0, 60)); //Establece el color del botón
@@ -66,6 +73,7 @@ public class ViewAlguacil extends JFrame {
         frmAlguacil.getContentPane().add(btnDesconectar); //Se añade el elemento al JFrame
         btnDesconectar.addActionListener(controlador); //Añade el botón al ActionListener para después asignarle su función
         
+        //BOTON GESTION EMPLEADOS
         btnGEmpleados= new JButton("Gestión Empleados");	//Indica qué está escrito
 	btnGEmpleados.setFont(new Font("Tahoma", Font.BOLD, 21));	//Establece el tamaño y el tipo de letra que tendrá el botón
 	btnGEmpleados.setBackground(new Color(20, 0, 60));	//Establece el color del botón
@@ -74,6 +82,19 @@ public class ViewAlguacil extends JFrame {
 	frmAlguacil.getContentPane().add(btnGEmpleados);	//Se añade el elemento al JFrame
 	btnGEmpleados.addActionListener(controlador);	//Añade el botón al ActionListener para después asignarle su función
         
+        //LABEL IMAGEN
+        labelAlguacilImagen = new JLabel("");
+	Image logo = new ImageIcon(this.getClass().getResource("/img/elmo.jpg")).getImage();
+	labelAlguacilImagen.setIcon(new ImageIcon(logo));//Coloca la imagen en la etiqueta
+	labelAlguacilImagen.setBounds(495, 0, 300, 300);	//Establece el tamaño de la ventana
+        frmAlguacil.getContentPane().add(labelAlguacilImagen);	//Se añade el elemento al JFrame
+        
+        labelRecuadroImagen = new JLabel("");
+        
+        
+        
+        
+        setIcon();
         frmAlguacil.setVisible(true);
     }
 

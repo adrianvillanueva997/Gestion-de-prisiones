@@ -6,12 +6,18 @@
 package Vista;
 
 import Controlador.CtrlAlguacilGestionReclusos;
+import Modelo.Fichero;
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 /**
@@ -19,7 +25,9 @@ import javax.swing.JTable;
  * @author Adrián Villanueva Martínez
  */
 public class VwAlguacilGReclusos extends JFrame {
-    //public JTable tablaVReclusos;
+    public Fichero fichero;
+    public JTable tablaVReclusos;
+    public JButton btnanadir;
     public CtrlAlguacilGestionReclusos controlador;
     public JButton btnAtras;
     public VwAlguacilGReclusos(){
@@ -28,7 +36,7 @@ public class VwAlguacilGReclusos extends JFrame {
     public void addController(CtrlAlguacilGestionReclusos mc) {
         controlador = mc;
     }
-        public void crearVentana(String usuario){
+        public void crearVentana(String usuario) throws IOException{
         
         //crea la ventana
         this.getContentPane().setBackground(Color.WHITE); //Establece el fondo en blanco
@@ -48,14 +56,39 @@ public class VwAlguacilGReclusos extends JFrame {
         this.getContentPane().add(btnAtras); //Se añade el elemento al JFrame
         btnAtras.addActionListener(controlador); //Añade el botón al ActionListener para después asignarle su función
         
-        //String titulos[] = { "ID" , "Nombre" , "Apellidos" , "Ala" , "Bloque" , "Celda" , "Delito" };
-        //String informacion[][];// obtenemos la informacion del txt
-        //informacion = obtieneMariz(ficheroRecluso,7);
-        //tablaVReclusos = new JTable(información, titulos);
-        //tablaVReclusos.setEnabled(false);
-        //tablaVReclusos.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        //tablaVReclusos.setViewportView(tablaVReclusos);
-        //tablaVReclusos.setBounds(0,0,500,500);
+        btnanadir = new JButton("Añadir"); //Indica qué está escrito
+        btnanadir.setFont(new Font("Tahoma", Font.BOLD, 21)); //Establece el tamaño y el tipo de letra que tendrá el botón
+        btnanadir.setBackground(new Color(20, 0, 60)); //Establece el color del botón
+        btnanadir.setForeground(Color.WHITE); //Establece el color de la fuente
+        btnanadir.setBounds(450, 500, 200, 60); //Establece el tamaño del botón
+        this.getContentPane().add(btnanadir); //Se añade el elemento al JFrame
+        btnanadir.addActionListener(controlador);
+        
+        fichero = new Fichero();//Instancio la lectura deñ fichero
+        String titulos[] = { "ID" , "Nombre" , "Apellidos" , "Ala" , "Bloque" , "Celda" , "Delito" };//pongo los nombres de los titulos de las columnas, aunque no sale
+        String informacion[][];// obtenemos la informacion del txt
+        informacion= fichero.obtieneMarizrecluso();//lee la informacion del txt y lo guarda en un array bidimensional
+        //DefaultTableModel dtm= new DefaultTableModel(informacion, titulos);
+        tablaVReclusos = new JTable(informacion,titulos);//crea la tabla
+        tablaVReclusos.setPreferredScrollableViewportSize(new Dimension(500, 80));
+        tablaVReclusos.setBounds(100, 100, 500, 500);//tamaño y ubicacion de la tabla
+        JScrollPane scrollPane = new JScrollPane(tablaVReclusos);//esta linea y las siguientes son mierdas que no sale, no se por que
+        this.getContentPane().add(tablaVReclusos);
+        this.getContentPane().add(scrollPane, BorderLayout.CENTER);
+        addWindowListener(new WindowAdapter() {
+	@Override
+        public void windowClosing(WindowEvent e) {
+        System.exit(0);
+        }
+        });
+        
+        tablaVReclusos.setEnabled(false);
+        tablaVReclusos.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        tablaVReclusos.setVisible(true);//hace visible la tabla
+        setIcon();
+        this.setVisible(true);
+
+        
         setIcon();
         this.setVisible(true);
     }

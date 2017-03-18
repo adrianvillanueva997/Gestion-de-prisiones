@@ -10,6 +10,9 @@ import Vista.*;
  
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 /**
@@ -44,7 +47,11 @@ public class ControladorAlguacil implements ActionListener{
     }else if (e.getSource().equals(vas.btnGEmpleados)){
         crearVentanaGestionEmpleados();
     }else if(e.getSource().equals(vas.btnGReclusos)){
-        crearVentanaGestionReclusos();
+             try {
+                 crearVentanaGestionReclusos();
+             } catch (IOException ex) {
+                 Logger.getLogger(ControladorAlguacil.class.getName()).log(Level.SEVERE, null, ex);
+             }
     }
     }
    
@@ -62,7 +69,7 @@ public class ControladorAlguacil implements ActionListener{
         ve.addController(cae); 
         ve.crearVentana(usuario);
     }
-    public void crearVentanaGestionReclusos(){
+    public void crearVentanaGestionReclusos() throws IOException{
         vas.frmAlguacil.dispose();
         VwAlguacilGReclusos var = new VwAlguacilGReclusos();
         CtrlAlguacilGestionReclusos car = new CtrlAlguacilGestionReclusos();
