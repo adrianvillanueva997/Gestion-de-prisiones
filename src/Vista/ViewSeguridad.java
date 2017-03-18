@@ -9,9 +9,13 @@ import Controlador.ControladorSeguridad;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.border.LineBorder;
 
 /**
  *
@@ -20,6 +24,11 @@ import javax.swing.JFrame;
 public class ViewSeguridad extends JFrame {
         ControladorSeguridad controlador;
         public JButton btnDesconectar;
+        public JLabel labelImagenSeguridad;
+        public JLabel labelRecuadroImagen;
+        public JLabel labelNombre;
+        public JLabel labelID;
+        public JLabel labelPuesto;
     
 
     //Constructor por defecto
@@ -49,6 +58,44 @@ public class ViewSeguridad extends JFrame {
         btnDesconectar.setBounds(10, 500, 200, 60); //Establece el tamaño del botón
         this.getContentPane().add(btnDesconectar); //Se añade el elemento al JFrame
         btnDesconectar.addActionListener(controlador); //Añade el botón al ActionListener para después asignarle su función
+        
+        //LABEL IMAGEN
+        labelImagenSeguridad = new JLabel("");
+	Image logo = new ImageIcon(this.getClass().getResource("/img/empleado_seguridad.png")).getImage();
+	labelImagenSeguridad.setIcon(new ImageIcon(logo));//Coloca la imagen en la etiqueta
+	labelImagenSeguridad.setBounds(490, 130, 300, 300);	//Establece el tamaño de la ventana
+        this.getContentPane().add(labelImagenSeguridad);	//Se añade el elemento al JFrame
+        
+        
+        //LABEL RECUADRO SUPERIOR
+	labelRecuadroImagen = new JLabel("");
+	labelRecuadroImagen.setForeground(new Color(0, 0, 0));
+	labelRecuadroImagen.setBackground(new Color(0, 0, 0));
+	labelRecuadroImagen.setBorder(new LineBorder(new Color(0, 0, 0), 3));
+	labelRecuadroImagen.setBounds(490, 100, 315, 300);
+	this.getContentPane().add(labelRecuadroImagen);
+        
+        //LABEL NOMBRE
+	labelNombre = new JLabel("Nombre: Willie");
+	labelNombre.setFont(new Font("Tahoma", Font.PLAIN, 22));
+	labelNombre.setBounds(490, 400, 415, 23);
+        labelNombre.setBorder(new LineBorder(new Color(0, 0, 0), 3));
+	this.getContentPane().add(labelNombre);
+
+        
+        //LABEL ID
+	labelID = new JLabel("ID: 27");
+	labelID.setFont(new Font("Tahoma", Font.PLAIN, 22));
+	labelID.setBounds(490, 420, 415, 23);
+        labelID.setBorder(new LineBorder(new Color(0, 0, 0), 3));
+	this.getContentPane().add(labelID);
+        
+        //LABEL PUESTO
+	labelPuesto = new JLabel("Puesto: Seguridad");
+	labelPuesto.setFont(new Font("Tahoma", Font.PLAIN, 22));
+	labelPuesto.setBounds(490, 440, 415, 23);
+        labelPuesto.setBorder(new LineBorder(new Color(0, 0, 0), 3));
+	this.getContentPane().add(labelPuesto);
         setIcon();
         this.setVisible(true);
     }

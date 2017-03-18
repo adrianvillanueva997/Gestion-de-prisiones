@@ -9,9 +9,13 @@ import Controlador.ControladorJefeSeguridad;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.border.LineBorder;
 
 /**
  *
@@ -24,6 +28,11 @@ public class ViewJefeSeguridad extends JFrame {
     public JButton btnVEmpleados;
     public JButton btnVReclusos;
     public JButton btnDesconectar;
+    public JLabel labelImagenSeguridad;
+    public JLabel labelRecuadroImagen;
+    public JLabel labelNombre;
+    public JLabel labelID;
+    public JLabel labelPuesto;
     
     public void addController(ControladorJefeSeguridad mc) {
         controlador = mc;
@@ -68,6 +77,46 @@ public class ViewJefeSeguridad extends JFrame {
         btnVReclusos.setBounds(30, 100, 350, 60);  
         this.getContentPane().add(btnVReclusos);   
         btnVReclusos.addActionListener(controlador);
+        
+        //LABEL IMAGEN
+        labelImagenSeguridad = new JLabel("");
+	Image logo = new ImageIcon(this.getClass().getResource("/img/jefe_seguridad.png")).getImage();
+	labelImagenSeguridad.setIcon(new ImageIcon(logo));//Coloca la imagen en la etiqueta
+	labelImagenSeguridad.setBounds(500, 95, 300, 300);	//Establece el tamaño de la ventana
+        this.getContentPane().add(labelImagenSeguridad);	//Se añade el elemento al JFrame
+        
+        
+        //LABEL RECUADRO SUPERIOR
+	labelRecuadroImagen = new JLabel("");
+	labelRecuadroImagen.setForeground(new Color(0, 0, 0));
+	labelRecuadroImagen.setBackground(new Color(0, 0, 0));
+	labelRecuadroImagen.setBorder(new LineBorder(new Color(0, 0, 0), 3));
+	labelRecuadroImagen.setBounds(490, 100, 315, 300);
+	this.getContentPane().add(labelRecuadroImagen);
+        
+        //LABEL NOMBRE
+	labelNombre = new JLabel("Nombre: Jefe Wiggum");
+	labelNombre.setFont(new Font("Tahoma", Font.PLAIN, 22));
+	labelNombre.setBounds(490, 400, 415, 23);
+        labelNombre.setBorder(new LineBorder(new Color(0, 0, 0), 3));
+	this.getContentPane().add(labelNombre);
+
+        
+        //LABEL ID
+	labelID = new JLabel("ID: 27");
+	labelID.setFont(new Font("Tahoma", Font.PLAIN, 22));
+	labelID.setBounds(490, 420, 415, 23);
+        labelID.setBorder(new LineBorder(new Color(0, 0, 0), 3));
+	this.getContentPane().add(labelID);
+        
+        //LABEL PUESTO
+	labelPuesto = new JLabel("Puesto: Jefe de Seguridad");
+	labelPuesto.setFont(new Font("Tahoma", Font.PLAIN, 22));
+	labelPuesto.setBounds(490, 440, 415, 23);
+        labelPuesto.setBorder(new LineBorder(new Color(0, 0, 0), 3));
+	this.getContentPane().add(labelPuesto);
+        
+        
         setIcon();
         this.setVisible(true);
     }

@@ -15,6 +15,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.border.LineBorder;
 
 /**
  *
@@ -28,6 +29,10 @@ public class ViewAlguacil extends JFrame {
     public JButton btnDesconectar;
     public JLabel labelAlguacilImagen;
     public JLabel labelRecuadroImagen;
+    public JLabel labelNombre;
+    public JLabel recuadroNombre;
+    public JLabel labelID;
+    public JLabel labelPuesto;
     
     
     public void addController(ControladorAlguacil mc) {
@@ -84,19 +89,45 @@ public class ViewAlguacil extends JFrame {
         
         //LABEL IMAGEN
         labelAlguacilImagen = new JLabel("");
-	Image logo = new ImageIcon(this.getClass().getResource("/img/elmo.jpg")).getImage();
+	Image logo = new ImageIcon(this.getClass().getResource("/img/elmo.png")).getImage();
 	labelAlguacilImagen.setIcon(new ImageIcon(logo));//Coloca la imagen en la etiqueta
-	labelAlguacilImagen.setBounds(495, 0, 300, 300);	//Establece el tamaño de la ventana
+	labelAlguacilImagen.setBounds(500, 95, 300, 300);	//Establece el tamaño de la ventana
         frmAlguacil.getContentPane().add(labelAlguacilImagen);	//Se añade el elemento al JFrame
         
-        labelRecuadroImagen = new JLabel("");
         
+        //LABEL RECUADRO SUPERIOR
+	labelRecuadroImagen = new JLabel("");
+	labelRecuadroImagen.setForeground(new Color(0, 0, 0));
+	labelRecuadroImagen.setBackground(new Color(0, 0, 0));
+	labelRecuadroImagen.setBorder(new LineBorder(new Color(0, 0, 0), 3));
+	labelRecuadroImagen.setBounds(490, 100, 315, 300);
+	frmAlguacil.getContentPane().add(labelRecuadroImagen);
         
-        
-        
+        //LABEL NOMBRE
+	labelNombre = new JLabel("Nombre: Elmo");
+	labelNombre.setFont(new Font("Tahoma", Font.PLAIN, 22));
+	labelNombre.setBounds(490, 400, 415, 23);
+        labelNombre.setBorder(new LineBorder(new Color(0, 0, 0), 3));
+	frmAlguacil.getContentPane().add(labelNombre);
         setIcon();
         frmAlguacil.setVisible(true);
-    }
-
-    
+        
+        //LABEL ID
+	labelID = new JLabel("ID: 27");
+	labelID.setFont(new Font("Tahoma", Font.PLAIN, 22));
+	labelID.setBounds(490, 420, 415, 23);
+        labelID.setBorder(new LineBorder(new Color(0, 0, 0), 3));
+	frmAlguacil.getContentPane().add(labelID);
+        setIcon();
+        frmAlguacil.setVisible(true);
+        
+        //LABEL PUESTO
+	labelPuesto = new JLabel("Puesto: Alguacil");
+	labelPuesto.setFont(new Font("Tahoma", Font.PLAIN, 22));
+	labelPuesto.setBounds(490, 440, 415, 23);
+        labelPuesto.setBorder(new LineBorder(new Color(0, 0, 0), 3));
+	frmAlguacil.getContentPane().add(labelPuesto);
+        setIcon();
+        frmAlguacil.setVisible(true);
+    }    
 }
