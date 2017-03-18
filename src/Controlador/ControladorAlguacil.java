@@ -6,6 +6,7 @@
 package Controlador;
  
 import Vista.*;
+
  
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -58,7 +59,7 @@ public class ControladorAlguacil implements ActionListener{
         vas.frmAlguacil.dispose();
         VwAlguacilEmpleados ve = new VwAlguacilEmpleados();
         CtrlAlguacilEmpleados cae = new CtrlAlguacilEmpleados(ve);
-        ve.addController(cae);
+        ve.addController(cae); 
         ve.crearVentana(usuario);
     }
     public void crearVentanaGestionReclusos(){

@@ -19,7 +19,7 @@ import javax.swing.JTable;
  * @author Adrián Villanueva Martínez
  */
 public class VwAlguacilGReclusos extends JFrame {
-    public JTable tablaVReclusos;
+    //public JTable tablaVReclusos;
     public CtrlAlguacilGestionReclusos controlador;
     public JButton btnAtras;
     public VwAlguacilGReclusos(){

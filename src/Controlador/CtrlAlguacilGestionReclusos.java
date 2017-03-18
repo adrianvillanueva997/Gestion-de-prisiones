@@ -5,6 +5,8 @@
  */
 package Controlador;
 
+import Vista.ViewAlguacil;
+import Vista.VwAlguacilGReclusos;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -12,11 +14,23 @@ import java.awt.event.ActionListener;
  *
  * @author Adrián Villanueva Martínez
  */
-public class CtrlAlguacilGestionReclusos implements ActionListener {
-
+public class CtrlAlguacilGestionReclusos implements ActionListener{
+    public VwAlguacilGReclusos vagr;
+    public String usuario;
+    
     @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void actionPerformed(ActionEvent e){
+         if(e.getSource().equals(vagr.btnAtras)){
+            volver();
+        }
+    }
+    
+    public void volver(){
+    vagr.dispose();
+    ViewAlguacil var = new ViewAlguacil();
+    ControladorAlguacil car = new ControladorAlguacil(var,usuario);
+    var.addController(car);
+    var.crearVentana(usuario);
     }
     
 }

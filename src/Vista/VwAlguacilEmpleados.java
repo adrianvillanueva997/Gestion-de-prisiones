@@ -19,7 +19,7 @@ import javax.swing.JButton;
  */
 public class VwAlguacilEmpleados extends JFrame {
     CtrlAlguacilEmpleados controlador;
-    JButton btnAtras;
+    public JButton btnAtras;
     public VwAlguacilEmpleados(){
     
     }

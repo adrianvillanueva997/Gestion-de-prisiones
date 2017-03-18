@@ -44,7 +44,6 @@ public class ViewLogin extends JFrame {
         this.setResizable(false); // Impide que la ventana se pueda redimensionar
         this.setMinimumSize(new Dimension(200, 200));
         this.setBounds(0,0,800,600); // Establece el ancho y alto de la pantalla
-        this.setExtendedState(JFrame.MAXIMIZED_BOTH); //Maximiza la pantalla
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Acaba el programa cuando se cierra la ventana
         this.getContentPane().setLayout(null); //Obtiene el contenido del JFrame
         
