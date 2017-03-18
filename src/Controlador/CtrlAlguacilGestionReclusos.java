@@ -7,6 +7,7 @@ package Controlador;
 
 import Vista.ViewAlguacil;
 import Vista.VwAlguacilGReclusos;
+import Vista.VwFormularioRecluso;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -22,6 +23,8 @@ public class CtrlAlguacilGestionReclusos implements ActionListener{
     public void actionPerformed(ActionEvent e){
          if(e.getSource().equals(vagr.btnAtras)){
             volver();
+        }else if(e.getSource().equals(vagr.btnanadir)){
+            crearFormulario();
         }
     }
     
@@ -31,6 +34,15 @@ public class CtrlAlguacilGestionReclusos implements ActionListener{
     ControladorAlguacil car = new ControladorAlguacil(var,usuario);
     var.addController(car);
     var.crearVentana(usuario);
+    }
+    
+    public void crearFormulario(){
+        VwFormularioRecluso vfr = new VwFormularioRecluso();
+        CtrlFormularioRecluso cfr = new CtrlFormularioRecluso();
+        vfr.addController(cfr);
+        vfr.crearVentanaFormularioRecluso(usuario);
+        
+        
     }
     
 }
