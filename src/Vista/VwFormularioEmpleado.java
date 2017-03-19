@@ -19,6 +19,7 @@ import javax.swing.border.LineBorder;
  
 /**
  *
+ * @author Adrián Villanueva Martínez
  */
 public class VwFormularioEmpleado extends JFrame {
     CtrlFormularioEmpleado controlador;
