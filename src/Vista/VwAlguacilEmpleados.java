@@ -62,6 +62,7 @@ public class VwAlguacilEmpleados extends JFrame {
         btnAnadirEmpleado.setForeground(Color.WHITE); //Establece el color de la fuente
         btnAnadirEmpleado.setBounds(450, 500, 200, 60); //Establece el tamaño del botón
         this.getContentPane().add(btnAnadirEmpleado); //Se añade el elemento al JFrame
+        btnAnadirEmpleado.addActionListener(controlador);
         
         //CREA LA TABLA
         fichero = new Fichero(); //Instancio la lectura deñ fichero

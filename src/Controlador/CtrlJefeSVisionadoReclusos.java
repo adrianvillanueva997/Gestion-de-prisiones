@@ -16,10 +16,10 @@ import java.awt.event.ActionListener;
  */
 public class CtrlJefeSVisionadoReclusos implements ActionListener {
     
-    VwJefeSVisionadoReclusos vsr;
-    ViewJefeSeguridad vjs;
-    ControladorJefeSeguridad cjs;
-    String usuario;
+    public VwJefeSVisionadoReclusos vsr;
+    public ViewJefeSeguridad vjs;
+    public ControladorJefeSeguridad cjs;
+    public String usuario;
     
     public CtrlJefeSVisionadoReclusos(VwJefeSVisionadoReclusos vsr) {
         this.vsr = vsr;
@@ -30,7 +30,6 @@ public class CtrlJefeSVisionadoReclusos implements ActionListener {
         if(e.getSource().equals(vsr.btnAtras)){
             volver();
         }
-        
     }
     public void volver(){
         vsr.dispose();

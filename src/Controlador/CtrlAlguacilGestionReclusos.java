@@ -46,7 +46,6 @@ public class CtrlAlguacilGestionReclusos implements ActionListener{
         CtrlFormularioRecluso cfr = new CtrlFormularioRecluso(vfr);
         vfr.addController(cfr);
         vfr.crearVentanaFormularioRecluso(usuario);
-        
     }
     
 }
