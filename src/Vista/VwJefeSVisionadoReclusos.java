@@ -6,12 +6,21 @@
 package Vista;
 
 import Controlador.CtrlJefeSVisionadoReclusos;
+import Modelo.Fichero;
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 /**
  *
@@ -19,7 +28,12 @@ import javax.swing.JFrame;
  */
 public class VwJefeSVisionadoReclusos extends JFrame {
     CtrlJefeSVisionadoReclusos controlador;
-    JButton btnAtras;
+    public JButton btnAtras;
+    public JTable tablaVReclusos;
+    public String FicheroPrisioneros;
+    Fichero fichero;
+    public  String[] nombreColumnas={"ID", "nombre","Apellido", "Ala", "Bloque","Celda","Delito" };
+    
     public VwJefeSVisionadoReclusos(){
     
     }
@@ -45,6 +59,32 @@ public class VwJefeSVisionadoReclusos extends JFrame {
         btnAtras.setBounds(10, 500, 200, 60); //Establece el tamaño del botón
         this.getContentPane().add(btnAtras); //Se añade el elemento al JFrame
         btnAtras.addActionListener(controlador); //Añade el botón al ActionListener para después asignarle su función
+        
+        //Crea la tabla
+        fichero = new Fichero();//Instancio la lectura deñ fichero
+        String titulos[] = { "ID" , "Nombre" , "Apellidos" , "Ala" , "Bloque" , "Celda" , "Delito" };//pongo los nombres de los titulos de las columnas, aunque no sale
+        String informacion[][] = null;// obtenemos la informacion del txt
+        try {
+            informacion= fichero.obtieneMarizrecluso();//lee la informacion del txt y lo guarda en un array bidimensional
+        } catch (IOException ex) {
+            Logger.getLogger(VwJefeSVisionadoReclusos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        tablaVReclusos = new JTable(informacion,titulos);//crea la tabla
+        tablaVReclusos.setPreferredScrollableViewportSize(new Dimension(500, 80));
+        tablaVReclusos.setBounds(100, 100, 500, 500);//tamaño y ubicacion de la tabla
+        JScrollPane scrollPane = new JScrollPane(tablaVReclusos);//esta linea y las siguientes son mierdas que no sale, no se por que
+        this.getContentPane().add(tablaVReclusos);
+        this.getContentPane().add(scrollPane, BorderLayout.CENTER);
+        addWindowListener(new WindowAdapter() {
+	@Override
+        public void windowClosing(WindowEvent e) {
+        System.exit(0);
+        }
+        });
+        
+        tablaVReclusos.setEnabled(false);
+        tablaVReclusos.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        tablaVReclusos.setVisible(true);//hace visible la tabla
         setIcon();
         this.setVisible(true);
     }

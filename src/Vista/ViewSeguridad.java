@@ -6,15 +6,24 @@
 package Vista;
 
 import Controlador.ControladorSeguridad;
+import Modelo.Fichero;
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.border.LineBorder;
 
 /**
@@ -23,6 +32,7 @@ import javax.swing.border.LineBorder;
  */
 public class ViewSeguridad extends JFrame {
         ControladorSeguridad controlador;
+        Fichero fichero;
         public JButton btnDesconectar;
         public JLabel labelImagenSeguridad;
         public JLabel labelRecuadroImagen;
@@ -96,6 +106,33 @@ public class ViewSeguridad extends JFrame {
 	labelPuesto.setBounds(490, 440, 415, 23);
         labelPuesto.setBorder(new LineBorder(new Color(0, 0, 0), 3));
 	this.getContentPane().add(labelPuesto);
+        
+        //TABLA
+        fichero = new Fichero(); //Instancio la lectura deñ fichero
+        String titulos[] = { "ID" , "Ala" , "Bloque" , "horario" };//pongo los nombres de los titulos de las columnas, aunque no sale. Sospecho que es para gestion interna
+        String informacion[][] = null;// obtenemos la informacion del txt
+            try {
+                informacion= fichero.obtieneMarizHorarios(); //lee la informacion del txt y lo guarda en un array bidimensional
+            } catch (IOException ex) {
+                Logger.getLogger(ViewSeguridad.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        JTable tablaHorarios = new JTable(informacion,titulos); //crea la tabla
+        tablaHorarios.setPreferredScrollableViewportSize(new Dimension(500, 80));
+        tablaHorarios.setBounds(100, 100, 500, 500);//tamaño y ubicacion de la tabla
+        JScrollPane scrollPane = new JScrollPane(tablaHorarios);//esta linea y las siguientes son mierdas que no sale, no se por que
+        this.getContentPane().add(tablaHorarios);
+        this.getContentPane().add(scrollPane, BorderLayout.CENTER);
+        addWindowListener(new WindowAdapter() {
+        @Override
+        public void windowClosing(WindowEvent e) {
+        System.exit(0);
+        }
+        });
+        tablaHorarios.setEnabled(false);
+        tablaHorarios.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        tablaHorarios.setVisible(true);//hace visible la tabla
+        
+        
         setIcon();
         this.setVisible(true);
     }

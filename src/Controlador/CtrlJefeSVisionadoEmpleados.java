@@ -5,6 +5,8 @@
  */
 package Controlador;
 
+import Vista.ViewJefeSeguridad;
+import Vista.VwJefeSVisionadoEmpleados;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -14,8 +16,26 @@ import java.awt.event.ActionListener;
  */
 public class CtrlJefeSVisionadoEmpleados implements ActionListener {
     
+    VwJefeSVisionadoEmpleados vse;
+    ViewJefeSeguridad vjs;
+    ControladorJefeSeguridad cjs;
+    public String usuario;
+    
+    public CtrlJefeSVisionadoEmpleados(VwJefeSVisionadoEmpleados vse) {
+        this.vse = vse;
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(e.getSource().equals(vse.btnAtras)){
+            volver();
+        }
+    }
+    public void volver(){
+        vse.dispose();
+        vjs = new ViewJefeSeguridad();
+        cjs = new ControladorJefeSeguridad(vjs, usuario);
+        vjs.addController(cjs);
+        vjs.crearVentana(usuario);
     }
 }

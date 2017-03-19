@@ -1,0 +1,3 @@
+ID;Nombre;Apellidos;Ala;Bloque;Celda;Delito
+1;miguel;chacon;1;1;1;asesinato;
+2;German;Garcia;1;1;2;robo;

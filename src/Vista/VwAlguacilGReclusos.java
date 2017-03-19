@@ -58,6 +58,7 @@ public class VwAlguacilGReclusos extends JFrame {
         this.getContentPane().add(btnAtras); //Se añade el elemento al JFrame
         btnAtras.addActionListener(controlador); //Añade el botón al ActionListener para después asignarle su función
         
+        
         btnanadir = new JButton("Añadir"); //Indica qué está escrito
         btnanadir.setFont(new Font("Tahoma", Font.BOLD, 21)); //Establece el tamaño y el tipo de letra que tendrá el botón
         btnanadir.setBackground(new Color(20, 0, 60)); //Establece el color del botón
@@ -65,6 +66,8 @@ public class VwAlguacilGReclusos extends JFrame {
         btnanadir.setBounds(450, 500, 200, 60); //Establece el tamaño del botón
         this.getContentPane().add(btnanadir); //Se añade el elemento al JFrame
         btnanadir.addActionListener(controlador);
+        
+        
         fichero = new Fichero();//Instancio la lectura deñ fichero
         String titulos[] = { "ID" , "Nombre" , "Apellidos" , "Ala" , "Bloque" , "Celda" , "Delito" };//pongo los nombres de los titulos de las columnas, aunque no sale
         String informacion[][] = null;// obtenemos la informacion del txt

@@ -21,8 +21,12 @@ import javax.swing.JOptionPane;
 public class ControladorJefeSeguridad implements ActionListener {
     public String usuario;
     ViewJefeSeguridad vjs;
-    //CtrlJefe
     public JFrame frmDialogo;
+    VwJefeSVisionadoEmpleados vse;
+    VwJefeSVisionadoReclusos vsr;
+    CtrlJefeSVisionadoEmpleados cve;
+    CtrlJefeSVisionadoReclusos cre;
+    
 
     /**
      *
@@ -55,18 +59,18 @@ public class ControladorJefeSeguridad implements ActionListener {
         vl.addController(mc);   //asigna el controlador a la ventana creada
         vl.crearVentanaLogin();
     }
-    public void crearVentanaVEmpleados () {
-        vjs.frmJefeSeguridad.dispose();
-        VwJefeSVisionadoEmpleados vjse = new VwJefeSVisionadoEmpleados();
-        CtrlJefeSVisionadoEmpleados cjsve = new CtrlJefeSVisionadoEmpleados();
-        vjse.addController(cjsve);
-        vjse.crearVentana(usuario);
+    public void crearVentanaVEmpleados(){
+        vjs.dispose();
+        vse = new VwJefeSVisionadoEmpleados();
+        cve = new CtrlJefeSVisionadoEmpleados(vse);
+        vse.addController(cve);
+        vse.crearVentana(usuario);
     }
-    public void crearVentanaVReclusos () {
-        vjs.frmJefeSeguridad.dispose();  //Cierra la ventana de inicio
-        VwJefeSVisionadoReclusos vjsvr = new VwJefeSVisionadoReclusos(); //crea nueva ventana
-        CtrlJefeSVisionadoReclusos cjsver = new CtrlJefeSVisionadoReclusos();    //crea nuevo controlador de ventana
-        vjsvr.addController(cjsver);   //asigna el controlador a la ventana creada
-        vjsvr.crearVentana(usuario);
+    public void crearVentanaVReclusos(){
+        vjs.dispose();
+        vsr = new VwJefeSVisionadoReclusos();
+        cre = new CtrlJefeSVisionadoReclusos(vsr);
+        vsr.addController(cre);
+        vsr.crearVentana(usuario);
     }
 }

@@ -28,6 +28,7 @@ public class VwFormularioRecluso extends JFrame {
     public JTextField txtDelito;
     public JTextField txtCelda;
     public JTextField txtAla;
+    public JTextField txtBloque;
     public JTextField txtID;
     public JButton btnAceptar;
     public JButton btnCancelar;
@@ -89,7 +90,7 @@ public class VwFormularioRecluso extends JFrame {
        
         txtDelito.setFont(new Font("Tahoma", Font.PLAIN, 21));  //Establece el tamaño y tipo de letra con el que se escribirá
         txtDelito.setBorder(new LineBorder(new Color(0, 0, 0), 5, true));//Establece el tipo de linea y el color
-        txtDelito.setBounds(100, 170, 200 , 50);//Establece el tamaño
+        txtDelito.setBounds(100, 250, 200 , 50);//Establece el tamaño
         this.getContentPane().add(txtDelito);//Se añade el elemento al JFrame
         txtDelito.setColumns(10);
        
@@ -104,10 +105,24 @@ public class VwFormularioRecluso extends JFrame {
        
         txtCelda.setFont(new Font("Tahoma", Font.PLAIN, 21));   //Establece el tamaño y tipo de letra con el que se escribirá
         txtCelda.setBorder(new LineBorder(new Color(0, 0, 0), 5, true));//Establece el tipo de linea y el color
-        txtCelda.setBounds(350, 170, 200 , 50);//Establece el tamaño
+        txtCelda.setBounds(430, 170, 120 , 50);//Establece el tamaño
         this.getContentPane().add(txtCelda);//Se añade el elemento al JFrame
         txtCelda.setColumns(10);
        
+        //Crea el campo de texto
+        txtBloque = new JTextField("Bloque");
+        txtBloque.addMouseListener(new MouseAdapter() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+        txtBloque.setText("");
+                }
+            });
+       
+        txtBloque.setFont(new Font("Tahoma", Font.PLAIN, 21));   //Establece el tamaño y tipo de letra con el que se escribirá
+        txtBloque.setBorder(new LineBorder(new Color(0, 0, 0), 5, true));//Establece el tipo de linea y el color
+        txtBloque.setBounds(100, 170, 120 , 50);//Establece el tamaño
+        this.getContentPane().add(txtBloque);//Se añade el elemento al JFrame
+        txtBloque.setColumns(10);
        
          //Crea el campo de texto
         txtAla = new JTextField("Ala");
@@ -120,7 +135,7 @@ public class VwFormularioRecluso extends JFrame {
        
         txtAla.setFont(new Font("Tahoma", Font.PLAIN, 21)); //Establece el tamaño y tipo de letra con el que se escribirá
         txtAla.setBorder(new LineBorder(new Color(0, 0, 0), 5, true));//Establece el tipo de linea y el color
-        txtAla.setBounds(350, 250, 200 , 50);//Establece el tamaño
+        txtAla.setBounds(265, 170, 120 , 50);//Establece el tamaño
         this.getContentPane().add(txtAla);//Se añade el elemento al JFrame
         txtAla.setColumns(10);
        
@@ -136,7 +151,7 @@ public class VwFormularioRecluso extends JFrame {
        
         txtID.setFont(new Font("Tahoma", Font.PLAIN, 21));  //Establece el tamaño y tipo de letra con el que se escribirá
         txtID.setBorder(new LineBorder(new Color(0, 0, 0), 5, true));//Establece el tipo de linea y el color
-        txtID.setBounds(100, 250, 200 , 50);//Establece el tamaño
+        txtID.setBounds(350, 250, 200 , 50);//Establece el tamaño
         this.getContentPane().add(txtID);//Se añade el elemento al JFrame
         txtID.setColumns(10);
        
