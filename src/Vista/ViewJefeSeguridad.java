@@ -103,7 +103,7 @@ public class ViewJefeSeguridad extends JFrame {
 
         
         //LABEL ID
-	labelID = new JLabel("ID: 27");
+	labelID = new JLabel("ID: 35");
 	labelID.setFont(new Font("Tahoma", Font.PLAIN, 22));
 	labelID.setBounds(490, 420, 415, 23);
         labelID.setBorder(new LineBorder(new Color(0, 0, 0), 3));

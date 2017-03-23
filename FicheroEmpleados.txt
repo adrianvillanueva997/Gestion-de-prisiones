@@ -1,1 +1,6 @@
-ID;Nombre;Apellidos;Puesto;
+id;nombre;apellido;puesto;
+27;elmo;rodriguez;alguacil;
+aaaa;aaa;aaa;aaa;
+aaaa;aaa;aaa;aaa;
+aaaa;aaa;aaa;aaa;
+aaaa;aaa;aaa;aaa;

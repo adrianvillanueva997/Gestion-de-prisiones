@@ -51,7 +51,7 @@ public class ViewLogin extends JFrame {
         
         //Crea el campo de texto
         txtUsuario = new JTextField("Usuario");
-        txtPass = new JPasswordField("lo que sea");
+        txtPass = new JPasswordField("Contraseña");
         txtUsuario.addMouseListener(new MouseAdapter() {
         @Override
         public void mouseClicked(MouseEvent e) {
