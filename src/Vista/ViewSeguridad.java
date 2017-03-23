@@ -118,7 +118,7 @@ public class ViewSeguridad extends JFrame {
             }
         JTable tablaHorarios = new JTable(informacion,titulos); //crea la tabla
         tablaHorarios.setPreferredScrollableViewportSize(new Dimension(500, 80));
-        tablaHorarios.setBounds(100, 100, 300, 300);//tamaño y ubicacion de la tabla
+        tablaHorarios.setBounds(100, 100, 350, 350);//tamaño y ubicacion de la tabla
         JScrollPane scrollPane = new JScrollPane(tablaHorarios);//esta linea y las siguientes son mierdas que no sale, no se por que
         this.getContentPane().add(tablaHorarios);
         this.getContentPane().add(scrollPane, BorderLayout.CENTER);

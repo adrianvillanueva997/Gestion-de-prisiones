@@ -48,7 +48,7 @@ public class ViewAbout extends JFrame {
                 this.getContentPane().add(btnAboutAceptar);	//Se añade el elemento al JFrame
                 btnAboutAceptar.addActionListener(controlador);	//Añade el botón al ActionListener para después asignarle su función
 		//Crea la etiqueta
-		labelAbout = new JLabel("<html>Programa realizado por:<br>Adrián Villanueva Martínez<br>Germán García García<br>Miguel Chacón Carrasco<br>Zhang Chen<br></html>");
+		labelAbout = new JLabel("<html>Programa realizado por:<br>Adrián Villanueva Martínez<br>Germán García García<br>Miguel Chacón Carrasco</html>");
 		//Se introduce el texto que va a salir por pantalla
 		labelAbout.setBounds(150, 175, 200, 200);	//Se establece el tamaño
 		labelAbout.setFont(new Font("Tahoma", Font.PLAIN, 20));	//Establece el tamaño y tipo de letra
